@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#D4A574">
+<link rel="manifest" href="../../../../manifest.json">
+<link rel="apple-touch-icon" href="../../../../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/style.css">
+<title>第一種 衛生管理者 令和2年度 労働衛生 過去問 全17問</title>
+<meta name="description" content="第一種衛生管理者試験 令和2年度の労働衛生の過去問17問を演習。解答・解説付きで効率的に学習できます。">
+</head>
+<body>
+<header class="header"><div class="container header-inner">
+<a href="../" class="back-btn">←</a>
+<div><div class="header-title">労働衛生</div><div class="header-subtitle">過去問 令和2年度</div></div></div></header>
+<div class="container"><div class="breadcrumb"><a href="../../../../">トップ</a><span>›</span><a href="../../../">第一種</a><span>›</span><a href="../../">過去問</a><span>›</span><a href="../">令和2年度</a><span>›</span><span>労働衛生</span></div></div>
+<div class="container">
+<div id="quizArea">
+<div class="quiz-top"><span class="quiz-progress-text" id="progressText"></span><span class="quiz-score past-color" id="scoreText"></span></div>
+<div class="quiz-progress-bar"><div class="quiz-progress-fill past-color" id="progressFill"></div></div>
+<div class="question-card"><div class="question-number past-color" id="questionNumber"></div><div class="question-text" id="questionText"></div></div>
+<div class="choices" id="choices"></div>
+<div class="explanation-box" id="explanationBox"><div class="explanation-title">💡 解説</div><div class="explanation-text" id="explanationText"></div></div>
+<button class="next-btn past-color" id="nextBtn">次の問題へ</button>
+</div>
+<div id="resultArea" style="display:none">
+<div class="result-container">
+<div class="result-circle past-color" id="resultCircle"><div class="result-score past-color" id="resultScore"></div><div class="result-total" id="resultTotal"></div></div>
+<div class="result-message" id="resultMessage"></div><div class="result-sub" id="resultSub"></div>
+<div class="result-actions">
+<button class="btn-primary past-color" id="retryBtn" onclick="startQuiz(pastData[1].hygiene[2020],'past-color')">もう一度挑戦</button>
+<a href="../" class="btn-secondary">令和2年度 分野選択に戻る</a>
+<a href="../../" class="btn-secondary">年度選択に戻る</a>
+<a href="../../../../" class="btn-secondary">トップに戻る</a>
+</div></div></div>
+</div>
+<footer class="site-footer"><div class="container">&copy; 2025 衛生管理者試験 対策アプリ</div></footer>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('../../../../sw.js').catch(()=>{});});}</script>
+<script src="../../../../js/data.js"></script>
+<script src="../../../../js/quiz.js"></script>
+<script>window.quizKey="1_past_hygiene_2020";startQuiz(pastData[1].hygiene[2020],"past-color");</script>
+</body>
+</html>

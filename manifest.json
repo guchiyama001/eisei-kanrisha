@@ -1,0 +1,25 @@
+{
+  "name": "衛生管理者試験 対策アプリ",
+  "short_name": "衛生管理者",
+  "description": "第一種・第二種衛生管理者試験の過去問＆オリジナル想定問題で合格を目指そう",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAF6F0",
+  "theme_color": "#D4A574",
+  "orientation": "portrait",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
