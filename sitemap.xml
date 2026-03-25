@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://eisei-kanrisha.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+
+  <!-- 第一種 -->
+  <url><loc>https://eisei-kanrisha.com/type1/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/original/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第一種 過去問 令和6年度 -->
+  <url><loc>https://eisei-kanrisha.com/type1/past/2024/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2024/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2024/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2024/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第一種 過去問 令和5年度 -->
+  <url><loc>https://eisei-kanrisha.com/type1/past/2023/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2023/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2023/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2023/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第一種 過去問 令和4年度 -->
+  <url><loc>https://eisei-kanrisha.com/type1/past/2022/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2022/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2022/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2022/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第一種 過去問 令和3年度 -->
+  <url><loc>https://eisei-kanrisha.com/type1/past/2021/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2021/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2021/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2021/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第一種 過去問 令和2年度 -->
+  <url><loc>https://eisei-kanrisha.com/type1/past/2020/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2020/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2020/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/past/2020/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第一種 オリジナル想定問題 -->
+  <url><loc>https://eisei-kanrisha.com/type1/original/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/original/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type1/original/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第二種 -->
+  <url><loc>https://eisei-kanrisha.com/type2/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/original/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第二種 過去問 令和6年度 -->
+  <url><loc>https://eisei-kanrisha.com/type2/past/2024/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2024/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2024/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2024/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第二種 過去問 令和5年度 -->
+  <url><loc>https://eisei-kanrisha.com/type2/past/2023/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2023/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2023/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2023/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第二種 過去問 令和4年度 -->
+  <url><loc>https://eisei-kanrisha.com/type2/past/2022/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2022/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2022/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2022/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第二種 過去問 令和3年度 -->
+  <url><loc>https://eisei-kanrisha.com/type2/past/2021/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2021/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2021/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2021/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第二種 過去問 令和2年度 -->
+  <url><loc>https://eisei-kanrisha.com/type2/past/2020/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2020/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2020/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/past/2020/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 第二種 オリジナル想定問題 -->
+  <url><loc>https://eisei-kanrisha.com/type2/original/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/original/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/type2/original/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+</urlset>

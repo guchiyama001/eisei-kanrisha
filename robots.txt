@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eisei-kanrisha.com/sitemap.xml
