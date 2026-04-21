@@ -51,6 +51,27 @@
       justify-content: center;
       margin-bottom: 20px;
     }
+    .filter-section { margin-bottom: 16px; }
+    .filter-label { font-size: 12px; color: #888; margin-bottom: 8px; text-align: left; }
+    .source-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .source-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 2px solid #1e3a5f;
+      background: #fff;
+      color: #1e3a5f;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+      min-width: 100px;
+    }
+    .source-btn:hover:not(.active) { background: #f0ebe3; }
+    .source-btn.active { background: #c8763a; border-color: #c8763a; color: #fff; }
     .filter-sub-row {
       display: flex;
       gap: 8px;
@@ -131,6 +152,16 @@
       padding: 20px;
       margin-bottom: 16px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .source-tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #f0f0f0;
+      color: #666;
+      margin-left: 6px;
+      vertical-align: middle;
     }
     .question-text {
       font-size: 15px;
@@ -258,14 +289,26 @@
     <!-- スタートパネル -->
     <div class="start-panel" id="startPanel">
       <h2>全問ランダム一問一答</h2>
-      <p>オリジナル想定問題の全分野をランダムに出題します。</p>
+      <p>オリジナル想定問題・過去問から全分野をランダムに出題します。</p>
 
-      <div class="filter-row" id="filterRow">
-        <button class="filter-btn active " data-field="all">全分野</button>
-        <div class="filter-sub-row">
-          <button class="filter-btn" data-field="law">⚖️ 関係法令</button>
-          <button class="filter-btn" data-field="hygiene">🛡️ 労働衛生</button>
-          <button class="filter-btn" data-field="physiology">🫀 労働生理</button>
+      <div class="filter-section">
+        <div class="filter-label">分野を選ぶ</div>
+        <div class="filter-row" id="filterRow">
+          <button class="filter-btn active" data-field="all">全分野</button>
+          <div class="filter-sub-row">
+            <button class="filter-btn" data-field="law">⚖️ 関係法令</button>
+            <button class="filter-btn" data-field="hygiene">🛡️ 労働衛生</button>
+            <button class="filter-btn" data-field="physiology">🫀 労働生理</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-label">問題ソース</div>
+        <div class="source-row" id="sourceRow">
+          <button class="source-btn active" data-source="all">すべて</button>
+          <button class="source-btn" data-source="original">オリジナルのみ</button>
+          <button class="source-btn" data-source="past">過去問のみ</button>
         </div>
       </div>
 
@@ -281,7 +324,10 @@
       </div>
 
       <div class="question-card">
-        <span class="field-badge" id="fieldBadge"></span>
+        <div>
+          <span class="field-badge" id="fieldBadge"></span>
+          <span class="source-tag" id="sourceTag"></span>
+        </div>
         <div class="question-text" id="questionText"></div>
         <div class="choices" id="choices"></div>
         <div class="explanation" id="explanation"></div>
@@ -309,13 +355,33 @@
     const FIELD_LABEL = { law: '⚖️ 関係法令', hygiene: '🛡️ 労働衛生', physiology: '🫀 労働生理' };
     const FIELD_BADGE_CLASS = { law: 'badge-law', hygiene: 'badge-hygiene', physiology: 'badge-physiology' };
 
-    function buildQuestions(selectedField) {
-      const src = originalData[1];
-      const fields = selectedField === 'all' ? ['law', 'hygiene', 'physiology'] : [selectedField];
+    function buildQuestions(selectedField, selectedSource) {
       let all = [];
-      fields.forEach(f => {
-        (src[f] || []).forEach(q => all.push({ ...q, field: f }));
-      });
+      const fields = selectedField === 'all' ? ['law', 'hygiene', 'physiology'] : [selectedField];
+
+      // オリジナル問題
+      if (selectedSource === 'all' || selectedSource === 'original') {
+        const src = originalData[1];
+        fields.forEach(f => {
+          (src[f] || []).forEach(q => all.push({ ...q, field: f, source: 'オリジナル' }));
+        });
+      }
+
+      // 過去問
+      if (selectedSource === 'all' || selectedSource === 'past') {
+        const src = pastData[1];
+        fields.forEach(f => {
+          const yearData = src[f] || {};
+          Object.keys(yearData).forEach(year => {
+            (yearData[year] || []).forEach(q => {
+              const y = parseInt(year);
+              const label = `R${y - 2018}年度`;
+              all.push({ ...q, field: f, source: label });
+            });
+          });
+        });
+      }
+
       // Fisher-Yates shuffle
       for (let i = all.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -330,6 +396,7 @@
     let correct = 0;
     let answered = false;
     let selectedField = 'all';
+    let selectedSource = 'all';
 
     // === 要素 ===
     const startPanel = document.getElementById('startPanel');
@@ -354,15 +421,25 @@
       });
     });
 
+    // === ソースボタン ===
+    document.querySelectorAll('.source-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.source-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedSource = btn.dataset.source;
+        updateCount();
+      });
+    });
+
     function updateCount() {
-      const q = buildQuestions(selectedField);
+      const q = buildQuestions(selectedField, selectedSource);
       totalCount.textContent = `全 ${q.length} 問`;
     }
     updateCount();
 
     // === スタート ===
     document.getElementById('startBtn').addEventListener('click', () => {
-      questions = buildQuestions(selectedField);
+      questions = buildQuestions(selectedField, selectedSource);
       current = 0;
       correct = 0;
       startPanel.style.display = 'none';
@@ -379,6 +456,7 @@
 
       fieldBadge.textContent = FIELD_LABEL[q.field];
       fieldBadge.className = 'field-badge ' + FIELD_BADGE_CLASS[q.field];
+      document.getElementById('sourceTag').textContent = q.source || '';
       questionText.textContent = q.q;
 
       choicesEl.innerHTML = '';
@@ -434,6 +512,7 @@
     document.getElementById('retryBtn').addEventListener('click', () => {
       donePanel.style.display = 'none';
       startPanel.style.display = 'block';
+      updateCount();
     });
   </script>
 </body>
