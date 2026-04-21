@@ -1,31 +1,218 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="theme-color" content="#D4A574">
-<link rel="manifest" href="../manifest.json">
-<link rel="apple-touch-icon" href="../icon-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
-<title>第二種衛生管理者試験 過去問・想定問題【無料Webアプリ】</title>
-<meta name="description" content="第二種衛生管理者試験の過去問と想定問題を無料で演習。有害業務を除く業種向け。関係法令・労働衛生・労働生理の3分野対応。">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第二種衛生管理者試験 過去問・想定問題【無料Webアプリ】</title>
+  <meta name="description" content="第二種衛生管理者試験の過去問と想定問題を無料で演習。有害業務を除く業種向け。関係法令・労働衛生・労働生理の3分野対応。">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: #f7f3ee;
+      color: #3a2e24;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #f7f3ee;
+      border-bottom: 1px solid #e0d8ce;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .back-btn {
+      color: #8a7a6a;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 1;
+      font-family: sans-serif;
+    }
+    .back-btn:hover { color: #3a2e24; }
+    .header-titles h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #3a2e24;
+    }
+    .header-titles .sub {
+      font-size: 11px;
+      color: #9a8a7a;
+      margin-top: 2px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    .breadcrumb {
+      font-size: 12px;
+      color: #9a8a7a;
+      margin-bottom: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .breadcrumb a {
+      color: #7a6a5a;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .page-sub {
+      font-size: 14px;
+      color: #7a6a5a;
+      margin-bottom: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .card-grid .card:nth-child(3) {
+      grid-column: 1 / -1;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 18px 18px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1.5px solid #e8e0d6;
+      box-shadow: 0 2px 10px rgba(58,46,36,0.07);
+      transition: box-shadow 0.18s, transform 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      box-shadow: 0 6px 20px rgba(58,46,36,0.13);
+      transform: translateY(-2px);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      border-radius: 0;
+    }
+    .card-past::before    { background: #7bafd4; }
+    .card-original::before { background: #d4a96a; }
+    .card-all::before     { background: #7abda0; }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+      width: fit-content;
+    }
+    .badge-past     { background: #deeaf5; color: #4a7aa0; }
+    .badge-original { background: #f5ead5; color: #a07840; }
+    .badge-all      { background: #d5ede6; color: #3a8060; }
+
+    .card-arrow {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 18px;
+      color: #c0b0a0;
+      font-family: sans-serif;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: #7a6a5a;
+      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* 3枚目カードは縦中央揃え */
+    .card-all {
+      justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-grid .card:nth-child(3) {
+        grid-column: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="header"><div class="container header-inner">
-<a href="../" class="back-btn">←</a>
-<div><div class="header-title">第二種 衛生管理者</div><div class="header-subtitle">学習モードを選択</div></div></div></header>
-<div class="container"><div class="breadcrumb"><a href="../">トップ</a><span>›</span><span>第二種</span></div></div>
-<div class="container">
-<div class="section-header"><h2>第二種 衛生管理者</h2><p>学習モードを選んでください</p></div>
-<div class="cards two-col">
-<a href="past/" class="card past-card"><div class="card-header"><span class="card-badge badge-past">PAST EXAM</span><span class="card-arrow">→</span></div><h2>過去問</h2><p>令和2〜6年度の公表問題ベース<br>年度別×分野別で演習</p></a>
-<a href="original/" class="card original-card"><div class="card-header"><span class="card-badge badge-original">ORIGINAL</span><span class="card-arrow">→</span></div><h2>オリジナル想定問題</h2><p>分野別20問ずつのオリジナル問題<br>基礎固めに最適</p></a>
-</div></div>
-<footer class="site-footer"><div class="container">&copy; 2025 衛生管理者試験 対策アプリ</div></footer>
-<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('../sw.js').catch(()=>{});});}</script>
+  <header>
+    <a href="/" class="back-btn">←</a>
+    <div class="header-titles">
+      <h1>第二種 衛生管理者</h1>
+      <div class="sub">学習モードを選択</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">トップ</a>　›　第二種
+    </div>
+
+    <h2 class="page-title">第二種 衛生管理者</h2>
+    <p class="page-sub">学習モードを選んでください</p>
+
+    <div class="card-grid">
+
+      <!-- 過去問 -->
+      <a class="card card-past" href="/type2/past/">
+        <span class="card-badge badge-past">PAST EXAM</span>
+        <span class="card-arrow">→</span>
+        <div class="card-title">過去問</div>
+        <div class="card-desc">令和2〜6年度の公表問題ベース<br>年度別×分野別で演習</div>
+      </a>
+
+      <!-- オリジナル想定問題 -->
+      <a class="card card-original" href="/type2/original/">
+        <span class="card-badge badge-original">ORIGINAL</span>
+        <span class="card-arrow">→</span>
+        <div class="card-title">オリジナル想定問題</div>
+        <div class="card-desc">分野別20問ずつのオリジナル問題<br>基礎固めに最適</div>
+      </a>
+
+      <!-- 全問ランダム -->
+      <a class="card card-all" href="/type2/all/">
+        <span class="card-badge badge-all">RANDOM</span>
+        <span class="card-arrow">→</span>
+        <div class="card-title">全問ランダム一問一答</div>
+        <div class="card-desc">過去問＋オリジナルをシャッフルして出題<br>総仕上げ・直前対策に</div>
+      </a>
+
+    </div>
+  </div>
 </body>
 </html>
+
