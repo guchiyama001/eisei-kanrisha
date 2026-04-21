@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第一種 衛生管理者 全問ランダム一問一答【無料】オリジナル問題・過去問</title>
+  <meta name="description" content="第一種衛生管理者試験の全問題（オリジナル想定問題・過去問）をランダムに出題。関係法令・労働衛生・労働生理の全分野に対応。スマホで使える無料Webアプリ。">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: #f5f5f0;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .back-btn {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .back-btn:hover { color: #fff; }
+    header h1 { font-size: 15px; font-weight: 600; }
+    .header-sub { font-size: 11px; color: #88aacc; margin-top: 2px; }
+
+    .container { max-width: 640px; margin: 0 auto; padding: 16px; }
+
+    /* スタートパネル */
+    .start-panel {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .start-panel h2 { font-size: 18px; margin-bottom: 8px; }
+    .start-panel p { font-size: 14px; color: #1e3a5f; margin-bottom: 20px; }
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .filter-sub-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .filter-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 2px solid #1e3a5f;
+      background: #fff;
+      color: #1e3a5f;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+      min-width: 100px;
+    }
+    .filter-btn:hover:not(.active) { background: #f0ebe3; border-color: #1e3a5f; }
+    .filter-btn.active { background: #c8763a; border-color: #c8763a; color: #fff; }
+    .start-btn {
+      background: #1e3a5f;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      max-width: 280px;
+      transition: background 0.15s;
+    }
+    .start-btn:hover { background: #162d4a; }
+    .total-count { font-size: 13px; color: #888; margin-top: 12px; }
+
+    /* 問題パネル */
+    .quiz-panel { display: none; }
+    .progress-bar-wrap {
+      background: #e0e0e0;
+      border-radius: 4px;
+      height: 6px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: #1a1a2e;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+    .progress-text {
+      font-size: 12px;
+      color: #888;
+      text-align: right;
+      margin-bottom: 8px;
+    }
+    .field-badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .badge-law { background: #e8f0fe; color: #1967d2; }
+    .badge-hygiene { background: #e6f4ea; color: #1e8e3e; }
+    .badge-physiology { background: #fce8e6; color: #c5221f; }
+
+    .question-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .question-text {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .choices { display: flex; flex-direction: column; gap: 10px; }
+    .choice-btn {
+      text-align: left;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+      background: #fafafa;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+      line-height: 1.4;
+    }
+    .choice-btn:hover:not(:disabled) { border-color: #1e3a5f; background: #f0f0f8; }
+    .choice-btn.correct { border-color: #1e8e3e; background: #e6f4ea; color: #1e8e3e; font-weight: 700; }
+    .choice-btn.wrong { border-color: #c5221f; background: #fce8e6; color: #c5221f; }
+    .choice-btn.show-correct { border-color: #1e8e3e; background: #e6f4ea; }
+
+    .explanation {
+      display: none;
+      background: #fff8e1;
+      border-left: 4px solid #f9ab00;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+    .explanation.show { display: block; }
+
+    .result-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .result-badge {
+      font-size: 22px;
+      font-weight: 900;
+    }
+    .result-badge.ok { color: #1e8e3e; }
+    .result-badge.ng { color: #c5221f; }
+
+    .next-btn {
+      display: none;
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 16px;
+      transition: background 0.15s;
+    }
+    .next-btn:hover { background: #2a2a4e; }
+    .next-btn.show { display: block; }
+
+    /* 終了パネル */
+    .done-panel {
+      display: none;
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .done-panel h2 { font-size: 22px; margin-bottom: 8px; }
+    .score-big { font-size: 52px; font-weight: 900; color: #1e3a5f; margin: 12px 0; }
+    .score-label { font-size: 14px; color: #1e3a5f; margin-bottom: 24px; }
+    .done-btns { display: flex; flex-direction: column; gap: 10px; }
+    .retry-btn {
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .top-btn {
+      background: #fff;
+      color: #1e3a5f;
+      border: 2px solid #1e3a5f;
+      border-radius: 8px;
+      padding: 11px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+
+    .breadcrumb {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: #1e3a5f; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/type1/" class="back-btn">←</a>
+    <div>
+      <h1>第一種 衛生管理者</h1>
+      <div class="header-sub">全問ランダム一問一答</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">トップ</a> › <a href="/type1/">第一種</a> › 全問ランダム
+    </div>
+
+    <!-- スタートパネル -->
+    <div class="start-panel" id="startPanel">
+      <h2>全問ランダム一問一答</h2>
+      <p>オリジナル想定問題の全分野をランダムに出題します。</p>
+
+      <div class="filter-row" id="filterRow">
+        <button class="filter-btn active " data-field="all">全分野</button>
+        <div class="filter-sub-row">
+          <button class="filter-btn" data-field="law">⚖️ 関係法令</button>
+          <button class="filter-btn" data-field="hygiene">🛡️ 労働衛生</button>
+          <button class="filter-btn" data-field="physiology">🫀 労働生理</button>
+        </div>
+      </div>
+
+      <button class="start-btn" id="startBtn">スタート</button>
+      <div class="total-count" id="totalCount"></div>
+    </div>
+
+    <!-- 問題パネル -->
+    <div class="quiz-panel" id="quizPanel">
+      <div class="progress-text" id="progressText"></div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+
+      <div class="question-card">
+        <span class="field-badge" id="fieldBadge"></span>
+        <div class="question-text" id="questionText"></div>
+        <div class="choices" id="choices"></div>
+        <div class="explanation" id="explanation"></div>
+      </div>
+
+      <button class="next-btn" id="nextBtn">次の問題へ</button>
+    </div>
+
+    <!-- 終了パネル -->
+    <div class="done-panel" id="donePanel">
+      <h2>🎉 お疲れ様でした！</h2>
+      <div class="score-big" id="scoreBig"></div>
+      <div class="score-label" id="scoreLabel"></div>
+      <div class="done-btns">
+        <button class="retry-btn" id="retryBtn">もう一度チャレンジ</button>
+        <a href="/type1/" class="top-btn">第一種トップに戻る</a>
+        <a href="/" class="top-btn">トップに戻る</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/data.js"></script>
+  <script>
+    // === データ収集 ===
+    const FIELD_LABEL = { law: '⚖️ 関係法令', hygiene: '🛡️ 労働衛生', physiology: '🫀 労働生理' };
+    const FIELD_BADGE_CLASS = { law: 'badge-law', hygiene: 'badge-hygiene', physiology: 'badge-physiology' };
+
+    function buildQuestions(selectedField) {
+      const src = originalData[1];
+      const fields = selectedField === 'all' ? ['law', 'hygiene', 'physiology'] : [selectedField];
+      let all = [];
+      fields.forEach(f => {
+        (src[f] || []).forEach(q => all.push({ ...q, field: f }));
+      });
+      // Fisher-Yates shuffle
+      for (let i = all.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [all[i], all[j]] = [all[j], all[i]];
+      }
+      return all;
+    }
+
+    // === 状態 ===
+    let questions = [];
+    let current = 0;
+    let correct = 0;
+    let answered = false;
+    let selectedField = 'all';
+
+    // === 要素 ===
+    const startPanel = document.getElementById('startPanel');
+    const quizPanel = document.getElementById('quizPanel');
+    const donePanel = document.getElementById('donePanel');
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+    const fieldBadge = document.getElementById('fieldBadge');
+    const questionText = document.getElementById('questionText');
+    const choicesEl = document.getElementById('choices');
+    const explanation = document.getElementById('explanation');
+    const nextBtn = document.getElementById('nextBtn');
+    const totalCount = document.getElementById('totalCount');
+
+    // === フィルターボタン ===
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedField = btn.dataset.field;
+        updateCount();
+      });
+    });
+
+    function updateCount() {
+      const q = buildQuestions(selectedField);
+      totalCount.textContent = `全 ${q.length} 問`;
+    }
+    updateCount();
+
+    // === スタート ===
+    document.getElementById('startBtn').addEventListener('click', () => {
+      questions = buildQuestions(selectedField);
+      current = 0;
+      correct = 0;
+      startPanel.style.display = 'none';
+      quizPanel.style.display = 'block';
+      showQuestion();
+    });
+
+    function showQuestion() {
+      answered = false;
+      const q = questions[current];
+      const pct = Math.round((current / questions.length) * 100);
+      progressText.textContent = `${current + 1} / ${questions.length}`;
+      progressBar.style.width = pct + '%';
+
+      fieldBadge.textContent = FIELD_LABEL[q.field];
+      fieldBadge.className = 'field-badge ' + FIELD_BADGE_CLASS[q.field];
+      questionText.textContent = q.q;
+
+      choicesEl.innerHTML = '';
+      q.c.forEach((choice, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn';
+        btn.textContent = `${['ア','イ','ウ','エ'][i]}. ${choice}`;
+        btn.addEventListener('click', () => onAnswer(i, q.a, q.e));
+        choicesEl.appendChild(btn);
+      });
+
+      explanation.className = 'explanation';
+      explanation.textContent = '';
+      nextBtn.className = 'next-btn';
+    }
+
+    function onAnswer(selected, correct_idx, exp) {
+      if (answered) return;
+      answered = true;
+      const btns = choicesEl.querySelectorAll('.choice-btn');
+      btns.forEach(b => b.disabled = true);
+
+      if (selected === correct_idx) {
+        btns[selected].classList.add('correct');
+        correct++;
+      } else {
+        btns[selected].classList.add('wrong');
+        btns[correct_idx].classList.add('show-correct');
+      }
+
+      explanation.textContent = '💡 ' + exp;
+      explanation.className = 'explanation show';
+      nextBtn.className = 'next-btn show';
+    }
+
+    nextBtn.addEventListener('click', () => {
+      current++;
+      if (current >= questions.length) {
+        showDone();
+      } else {
+        showQuestion();
+      }
+    });
+
+    function showDone() {
+      quizPanel.style.display = 'none';
+      donePanel.style.display = 'block';
+      const pct = Math.round((correct / questions.length) * 100);
+      document.getElementById('scoreBig').textContent = `${correct} / ${questions.length}`;
+      document.getElementById('scoreLabel').textContent = `正解率 ${pct}%`;
+    }
+
+    document.getElementById('retryBtn').addEventListener('click', () => {
+      donePanel.style.display = 'none';
+      startPanel.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
