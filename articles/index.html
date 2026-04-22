@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>衛生管理者試験 関連記事一覧｜試験情報・勉強法</title>
+  <meta name="description" content="衛生管理者試験に関する記事一覧。第一種・第二種の違い、合格率・難易度、勉強法、試験日程など、受験に役立つ情報をまとめています。">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: #f7f3ee;
+      color: #3a2e24;
+      min-height: 100vh;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #f7f3ee;
+      border-bottom: 1px solid #e0d8ce;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .back-btn {
+      color: #8a7a6a;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .back-btn:hover { color: #3a2e24; }
+    .header-titles h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #3a2e24;
+    }
+    .header-titles .sub {
+      font-size: 11px;
+      color: #9a8a7a;
+      margin-top: 2px;
+    }
+
+    /* ハンバーガー */
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 200;
+    }
+    .hamburger-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #3a2e24;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      transform-origin: center;
+    }
+    .hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn.open span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(58,46,36,0.35);
+      z-index: 150;
+    }
+    .menu-overlay.show { display: block; }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 240px;
+      height: 100%;
+      background: #fff;
+      z-index: 160;
+      box-shadow: -4px 0 20px rgba(58,46,36,0.12);
+      transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-top: 64px;
+    }
+    .drawer.open { right: 0; }
+    .drawer-menu { list-style: none; padding: 8px 0; }
+    .drawer-menu li a {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      text-decoration: none;
+      color: #3a2e24;
+      font-size: 15px;
+      font-weight: 600;
+      border-bottom: 1px solid #f0e8e0;
+      transition: background 0.15s;
+    }
+    .drawer-menu li a:hover { background: #f7f3ee; }
+    .drawer-menu li a .menu-arrow { margin-left: auto; color: #c0b0a0; font-size: 14px; }
+
+    /* コンテンツ */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    /* パンくず */
+    .breadcrumb {
+      font-size: 12px;
+      color: #9a8a7a;
+      margin-bottom: 20px;
+    }
+    .breadcrumb a { color: #7a6a5a; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ページタイトル */
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .page-sub {
+      font-size: 14px;
+      color: #7a6a5a;
+      margin-bottom: 28px;
+    }
+
+    /* カテゴリラベル */
+    .category-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #9a8a7a;
+      margin: 28px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid #e8e0d6;
+      text-transform: uppercase;
+    }
+    .category-label:first-of-type { margin-top: 0; }
+
+    /* 記事カード */
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .article-card {
+      background: #fff;
+      border: 1.5px solid #e8e0d6;
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 8px rgba(58,46,36,0.05);
+      transition: box-shadow 0.18s, transform 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+    }
+    .article-card.cat-about::before   { background: #7bafd4; }
+    .article-card.cat-study::before   { background: #c8763a; }
+    .article-card.cat-subject::before { background: #7abda0; }
+    .article-card.cat-schedule::before{ background: #b08fd4; }
+    .article-card.cat-compare::before { background: #d4a96a; }
+
+    .article-card:hover {
+      box-shadow: 0 4px 16px rgba(58,46,36,0.11);
+      transform: translateY(-1px);
+    }
+
+    .article-card-body { flex: 1; min-width: 0; }
+    .article-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      color: #2a1e14;
+    }
+    .article-card-desc {
+      font-size: 12px;
+      color: #7a6a5a;
+      line-height: 1.5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .article-card-arrow {
+      color: #c0b0a0;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* 近日公開バッジ */
+    .article-card.coming-soon {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .badge-soon {
+      font-size: 10px;
+      font-weight: 700;
+      background: #e8e0d6;
+      color: #9a8a7a;
+      padding: 2px 8px;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* CTAバナー */
+    .cta-banner {
+      background: #1e3a5f;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-banner-text h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .cta-banner-text p {
+      font-size: 12px;
+      color: #a0b8d0;
+    }
+    .cta-banner-btns {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .cta-btn-1 {
+      background: #c8763a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .cta-btn-2 {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+      .cta-banner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <a href="/" class="back-btn">←</a>
+      <div class="header-titles">
+        <h1>衛生管理者試験 対策</h1>
+        <div class="sub">関連記事</div>
+      </div>
+    </div>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="drawer" id="drawer">
+    <ul class="drawer-menu">
+      <li><a href="/">試験対策アプリ<span class="menu-arrow">›</span></a></li>
+      <li><a href="/articles/">関連記事<span class="menu-arrow">›</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="/">トップ</a> › 関連記事
+    </div>
+
+    <h2 class="page-title">関連記事</h2>
+    <p class="page-sub">試験概要・勉強法・科目別対策など受験に役立つ情報</p>
+
+    <!-- 試験概要 -->
+    <div class="category-label">試験概要</div>
+    <div class="article-list">
+      <a class="article-card cat-about" href="/articles/about/type1-vs-type2.html">
+        <div class="article-card-body">
+          <div class="article-card-title">第一種・第二種の違いを徹底比較【どちらを受けるべきか一発でわかる】</div>
+          <div class="article-card-desc">選任できる業種・試験科目・合格率・勉強時間を比較。業種別フローチャートつき。</div>
+        </div>
+        <span class="article-card-arrow">›</span>
+      </a>
+      <a class="article-card cat-about coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">合格率・難易度【令和6年度最新版】</div>
+          <div class="article-card-desc">第一種46.3%・第二種49.8%。過去5年の推移と難化の理由を解説。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+      <a class="article-card cat-about coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">受験資格・条件を詳しく解説</div>
+          <div class="article-card-desc">学歴・実務経験年数のパターンと、事業者証明書の取り方。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+      <a class="article-card cat-about coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">試験科目・出題数・配点を完全整理</div>
+          <div class="article-card-desc">第一種44問400点・第二種30問300点。科目別の合格基準も解説。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+    </div>
+
+    <!-- 勉強法 -->
+    <div class="category-label">勉強法</div>
+    <div class="article-list">
+      <a class="article-card cat-study coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">必要な勉強時間は？合格スケジュールの立て方</div>
+          <div class="article-card-desc">第一種100時間・第二種60時間。働きながら合格する現実的なプランを解説。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+      <a class="article-card cat-study coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">過去問の正しい使い方【繰り返すだけでは合格できない理由】</div>
+          <div class="article-card-desc">出題傾向の変化に対応するための過去問活用法と注意点。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+      <a class="article-card cat-study coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">独学で合格するための勉強法【初心者向け】</div>
+          <div class="article-card-desc">テキスト選び・学習順序・スキマ時間の使い方まで徹底解説。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+    </div>
+
+    <!-- 科目別対策 -->
+    <div class="category-label">科目別対策</div>
+    <div class="article-list">
+      <a class="article-card cat-subject coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">労働生理の頻出テーマ10選【得点源にする攻略法】</div>
+          <div class="article-card-desc">循環器・呼吸・神経・代謝…暗記すべき数値とポイントを整理。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+      <a class="article-card cat-subject coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">関係法令の出題傾向まとめ【第一種・第二種別】</div>
+          <div class="article-card-desc">選任人数・健診頻度・保存期間など数字系の問題を徹底整理。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+      <a class="article-card cat-subject coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">労働衛生（有害業務）の頻出テーマ【第一種対策】</div>
+          <div class="article-card-desc">特定化学物質・有機溶剤・粉じん・騒音の要点を整理。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+    </div>
+
+    <!-- 試験日程・手続き -->
+    <div class="category-label">試験日程・手続き</div>
+    <div class="article-list">
+      <a class="article-card cat-schedule coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">2026年度 試験日程・申込スケジュール</div>
+          <div class="article-card-desc">全国7会場の試験日程と申込方法・必要書類を一覧で確認。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+      <a class="article-card cat-schedule coming-soon" href="#">
+        <div class="article-card-body">
+          <div class="article-card-title">合格後の免許申請手続き【流れと注意点】</div>
+          <div class="article-card-desc">合格通知から免許証交付までの手順と必要書類を解説。</div>
+        </div>
+        <span class="badge-soon">近日公開</span>
+      </a>
+    </div>
+
+    <!-- 問題集CTA -->
+    <div class="cta-banner">
+      <div class="cta-banner-text">
+        <h3>📝 無料で問題演習をはじめよう</h3>
+        <p>過去問＋想定問題を無料で演習</p>
+      </div>
+      <div class="cta-banner-btns">
+        <a href="/type1/" class="cta-btn-1">第一種衛生管理者</a>
+        <a href="/type2/" class="cta-btn-2">第二種衛生管理者</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const btn = document.getElementById('hamburgerBtn');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('menuOverlay');
+    function openMenu() {
+      btn.classList.add('open');
+      drawer.classList.add('open');
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    btn.addEventListener('click', () => drawer.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+  </script>
+
+</body>
+</html>
