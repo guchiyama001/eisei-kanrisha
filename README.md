@@ -53,7 +53,7 @@
 
 ## 🔗 関連リンク
 
-- サイト: [https://eisei-kanrisha.com]([url](https://eisei-kanrisha.com))
+- サイト: [https://eisei-kanrisha.com](https://eisei-kanrisha.com)
 - 第一種 過去問: [https://eisei-kanrisha.com/type1/](https://eisei-kanrisha.com/type1/)
 - 第二種 過去問: [https://eisei-kanrisha.com/type2/](https://eisei-kanrisha.com/type2/)
-
+- 関連記事：[https://eisei-kanrisha.com/articles/](https://eisei-kanrisha.com/articles/)
