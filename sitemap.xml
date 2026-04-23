@@ -81,4 +81,11 @@
   <url><loc>https://eisei-kanrisha.com/type2/original/law/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://eisei-kanrisha.com/type2/original/hygiene/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://eisei-kanrisha.com/type2/original/physiology/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- 記事コンテンツ -->
+  <url><loc>https://eisei-kanrisha.com/articles/about/type1-vs-type2/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/articles/about/pass-rate/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/articles/study/how-to-study/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://eisei-kanrisha.com/articles/study/hours/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  
 </urlset>
