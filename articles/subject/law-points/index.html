@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>関係法令の出題傾向まとめ【第一種・第二種別】｜衛生管理者試験対策</title>
+  <meta name="description" content="衛生管理者試験「関係法令」の出題傾向を第一種・第二種別に徹底解説。衛生管理体制・健康診断・労働時間・有害業務関連の頻出テーマと数値を体系的にまとめました。">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: #fdfcf5;
+      color: #3a2e24;
+      min-height: 100vh;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #fdfcf5;
+      border-bottom: 1px solid #e0d8ce;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .back-btn { color: #8a7a6a; text-decoration: none; font-size: 20px; line-height: 1; }
+    .back-btn:hover { color: #3a2e24; }
+    .header-titles h1 { font-size: 14px; font-weight: 700; color: #3a2e24; }
+    .header-titles .sub { font-size: 11px; color: #9a8a7a; margin-top: 2px; }
+
+    .page-wrap { max-width: 780px; margin: 0 auto; padding: 24px 16px 60px; }
+
+    .breadcrumb { font-size: 12px; color: #9a8a7a; margin-bottom: 20px; }
+    .breadcrumb a { color: #7a6a5a; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .article-meta { font-size: 12px; color: #9a8a7a; margin-bottom: 12px; }
+
+    .article-title {
+      font-size: 26px; font-weight: 700; line-height: 1.4;
+      margin-bottom: 20px; color: #2a1e14;
+    }
+    @media (max-width: 480px) { .article-title { font-size: 21px; } }
+
+    .article-lead {
+      background: #fff;
+      border-left: 4px solid #c8763a;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 18px;
+      margin-bottom: 32px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .toc {
+      background: #fff;
+      border: 1.5px solid #e8e0d6;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .toc-title { font-size: 14px; font-weight: 700; color: #7a6a5a; margin-bottom: 12px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { font-size: 14px; margin-bottom: 6px; }
+    .toc a { color: #c8763a; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .article-body h2 {
+      font-size: 22px; font-weight: 700;
+      margin: 48px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e8e0d6;
+      color: #2a1e14;
+      scroll-margin-top: 70px;
+    }
+    .article-body h3 {
+      font-size: 18px; font-weight: 700;
+      margin: 32px 0 12px;
+      color: #3a2e24;
+      padding-left: 12px;
+      border-left: 3px solid #c8763a;
+      scroll-margin-top: 70px;
+    }
+    .article-body p { margin-bottom: 16px; line-height: 1.9; }
+    .article-body ul, .article-body ol { margin: 12px 0 20px 24px; }
+    .article-body li { margin-bottom: 8px; line-height: 1.8; }
+    .article-body strong { color: #2a1e14; font-weight: 700; }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0 28px;
+      border-radius: 10px;
+      border: 1.5px solid #e8e0d6;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; }
+    th { background: #1e3a5f; color: #fff; padding: 12px 14px; text-align: left; font-weight: 700; white-space: nowrap; }
+    td { padding: 11px 14px; border-bottom: 1px solid #e8e0d6; vertical-align: top; line-height: 1.7; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f9f6f2; }
+    .td-center { text-align: center; }
+    .td-num { text-align: center; font-weight: 700; color: #1e3a5f; }
+
+    /* 出題構成バー */
+    .subject-bars { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 28px; }
+    .subject-bar-item { background: #fff; border: 1.5px solid #e8e0d6; border-radius: 8px; padding: 12px 16px; }
+    .subject-bar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .subject-bar-name { font-size: 14px; font-weight: 700; }
+    .subject-bar-count { font-size: 13px; color: #7a6a5a; }
+    .bar-wrap { background: #f0ebe3; border-radius: 4px; height: 8px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; }
+    .bar-blue { background: #7bafd4; }
+    .bar-orange { background: #c8763a; }
+    .bar-green { background: #7abda0; }
+    .subject-bar-note { font-size: 12px; color: #9a8a7a; margin-top: 6px; }
+
+    /* 頻出度バッジ */
+    .freq-badge {
+      display: inline-block;
+      background: #1e3a5f;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .freq-badge-orange {
+      display: inline-block;
+      background: #c8763a;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    /* 重要ポイントカード */
+    .key-points { display: flex; flex-direction: column; gap: 8px; margin: 16px 0 24px; }
+    .key-point-item {
+      background: #fff; border: 1.5px solid #e8e0d6;
+      border-radius: 8px; padding: 12px 16px; font-size: 14px;
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .key-point-mark { color: #c8763a; font-weight: 700; flex-shrink: 0; font-size: 15px; }
+
+    .box-point {
+      background: #fff8f0; border: 1.5px solid #e8c89a;
+      border-radius: 10px; padding: 18px 20px; margin: 24px 0; font-size: 13px;
+    }
+    .box-point .box-title {
+      font-size: 14px; font-weight: 700; color: #c8763a;
+      margin-bottom: 10px; text-decoration: underline; text-underline-offset: 3px;
+    }
+    .box-point ul { margin: 0 0 0 18px; }
+
+    .box-caution {
+      background: #fff0f0; border: 1.5px solid #e8a0a0;
+      border-radius: 10px; padding: 18px 20px; margin: 24px 0; font-size: 13px;
+    }
+    .box-caution .box-title {
+      font-size: 14px; font-weight: 700; color: #c02020;
+      margin-bottom: 10px; text-decoration: underline; text-underline-offset: 3px;
+    }
+    .box-caution ul { margin: 0 0 0 18px; }
+
+    .box-info {
+      background: #f0f6ff; border: 1.5px solid #a0b8e0;
+      border-radius: 10px; padding: 18px 20px; margin: 24px 0; font-size: 13px;
+    }
+    .box-info .box-title {
+      font-size: 14px; font-weight: 700; color: #1e3a5f;
+      margin-bottom: 10px; text-decoration: underline; text-underline-offset: 3px;
+    }
+    .box-info ul { margin: 0 0 0 18px; }
+
+    /* CTA */
+    .cta-block {
+      background: #1e3a5f; border-radius: 12px;
+      padding: 28px 24px; margin: 40px 0; color: #fff;
+    }
+    .cta-block h3 { color: #fff; font-size: 18px; margin-bottom: 10px; border: none; padding: 0; }
+    .cta-block p { color: #fff; font-size: 14px; margin-bottom: 16px; text-align: left; }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .cta-btn-1 {
+      background: #c8763a; color: #fff; border: none; border-radius: 8px;
+      padding: 13px 24px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-block;
+    }
+    .cta-btn-2 {
+      background: #fff; color: #1e3a5f; border: none; border-radius: 8px;
+      padding: 13px 24px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-block;
+    }
+
+    .summary-box {
+      background: #fff; border: 2px solid #1e3a5f;
+      border-radius: 12px; padding: 24px; margin: 32px 0;
+    }
+    .summary-box h3 { border: none; padding: 0; margin: 0 0 16px; color: #1e3a5f; font-size: 17px; font-weight: 700; }
+    .summary-box ul { margin: 0 0 0 20px; }
+    .summary-box li { margin-bottom: 8px; line-height: 1.8; font-size: 14px; }
+
+    .related { margin: 40px 0 0; }
+    .related-title { font-size: 14px; font-weight: 700; color: #7a6a5a; margin-bottom: 12px; }
+    .related-links { display: flex; flex-direction: column; gap: 8px; }
+    .related-link {
+      background: #fff; border: 1.5px solid #e8e0d6; border-radius: 8px;
+      padding: 12px 16px; text-decoration: none; color: #3a2e24; font-size: 14px;
+      display: flex; align-items: center; gap: 8px; transition: box-shadow 0.15s;
+    }
+    .related-link:hover { box-shadow: 0 2px 8px rgba(58,46,36,0.1); }
+    .related-link-arrow { color: #c8763a; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/articles/" class="back-btn">←</a>
+  <div class="header-titles">
+    <h1>衛生管理者試験 対策アプリ</h1>
+    <div class="sub">科目別対策</div>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+  <div class="breadcrumb">
+    <a href="/">トップ</a> › <a href="/articles/">関連記事</a> › 関係法令 出題傾向
+  </div>
+
+  <div class="article-meta">2026年4月更新 ｜ 第一種・第二種対応</div>
+
+  <h1 class="article-title">関係法令の出題傾向まとめ<br>【第一種・第二種別】</h1>
+
+  <div class="article-lead">
+    衛生管理者試験の「関係法令」は、3科目の中で最も問題数が多く、合否を大きく左右する科目です。第一種では全44問中17問、第二種でも全30問中10問が関係法令から出題されます。法律の条文に基づく問題が中心のため、「何の数字を覚えれば得点できるか」を把握した上で戦略的に学習することが合格への近道です。<br><br>
+    この記事では第一種・第二種それぞれの出題構成と頻出テーマを体系的に解説し、効率的な攻略法まで詳しくお伝えします。
+  </div>
+
+  <nav class="toc">
+    <div class="toc-title">この記事の目次</div>
+    <ol>
+      <li><a href="#sec1">関係法令とはどんな科目か - 構成と配点</a></li>
+      <li><a href="#sec2">第二種の出題傾向 - 有害業務以外の関係法令10問を攻略すべし</a></li>
+      <li><a href="#sec3">第一種の出題傾向 - 有害業務関連の上乗せ7問を攻略すべし</a></li>
+      <li><a href="#sec4">頻出テーマ① 衛生管理体制（選任義務・衛生委員会）</a></li>
+      <li><a href="#sec5">頻出テーマ② 健康診断（種類・頻度・事後措置）</a></li>
+      <li><a href="#sec6">頻出テーマ③ 労働時間・休憩・休日</a></li>
+      <li><a href="#sec7">頻出テーマ④ 有害業務関連の法令（特化則・有機則・電離則）</a></li>
+      <li><a href="#sec8">関係法令を効率よく攻略する3つの学習法</a></li>
+      <li><a href="#sec9">まとめ</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <!-- H2-1 -->
+    <h2 id="sec1">1. 関係法令とはどんな科目か - 構成と配点</h2>
+
+    <p>関係法令は、労働安全衛生法をはじめとする各種法律・規則の内容を問う科目です。試験では条文の内容を正確に理解しているかどうかが問われ、特に具体的な数値（選任人数・実施頻度・保存期間など）を問う問題が多く出題されます。</p>
+
+    <h3>試験における位置づけと出題数</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>第一種衛生管理者</th><th>第二種衛生管理者</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>関係法令の総問題数</td>
+            <td class="td-num">17問</td>
+            <td class="td-num">10問</td>
+          </tr>
+          <tr>
+            <td>　うち有害業務以外</td>
+            <td class="td-num">10問</td>
+            <td class="td-num">10問（全問）</td>
+          </tr>
+          <tr>
+            <td>　うち有害業務関連</td>
+            <td class="td-num">7問</td>
+            <td class="td-num">なし</td>
+          </tr>
+          <tr>
+            <td>試験全体の問題数</td>
+            <td class="td-num">44問</td>
+            <td class="td-num">30問</td>
+          </tr>
+          <tr>
+            <td>関係法令の割合</td>
+            <td class="td-num">約39%</td>
+            <td class="td-num">約33%</td>
+          </tr>
+          <tr>
+            <td>科目合格基準</td>
+            <td class="td-center">40%以上（7問以上）</td>
+            <td class="td-center">40%以上（4問以上）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>第一種では17問と全科目中最多の出題数を誇り、試験の得点を最も左右する科目です。第二種は10問ですが、全30問のうちの3分の1を占めるため、油断できません。どちらの試験でも<strong>関係法令で高得点を取ることが合格の最重要条件</strong>といえます。</p>
+
+    <h3>関係法令の主な根拠法令</h3>
+
+    <p>試験に出題される関係法令は複数の法律・規則にまたがっています。出題の大半は以下の法令から出ます。</p>
+
+    <div class="subject-bars">
+      <div class="subject-bar-item">
+        <div class="subject-bar-header">
+          <div class="subject-bar-name">労働安全衛生法・同施行令・規則</div>
+          <div class="subject-bar-count">出題の約60〜70%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-fill bar-blue" style="width:65%"></div></div>
+        <div class="subject-bar-note">衛生管理体制・健康診断・安全衛生教育など試験の中核をなす法令</div>
+      </div>
+      <div class="subject-bar-item">
+        <div class="subject-bar-header">
+          <div class="subject-bar-name">労働基準法・同施行規則</div>
+          <div class="subject-bar-count">出題の約20〜25%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-fill bar-orange" style="width:22%"></div></div>
+        <div class="subject-bar-note">労働時間・休憩・休日・年次有給休暇・女性保護など</div>
+      </div>
+      <div class="subject-bar-item">
+        <div class="subject-bar-header">
+          <div class="subject-bar-name">有害業務関連の特別規則（第一種のみ）</div>
+          <div class="subject-bar-count">第一種の約30%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-fill bar-green" style="width:30%"></div></div>
+        <div class="subject-bar-note">特定化学物質障害予防規則・有機溶剤中毒予防規則・電離放射線障害防止規則・粉じん障害防止規則など</div>
+      </div>
+    </div>
+
+    <div class="box-info">
+      <div class="box-title">関係法令の学習で最重要な心構え</div>
+      関係法令は「法律の条文を丸暗記する科目」ではありません。条文の趣旨（なぜその規定があるのか）を理解した上で、重要な数値・期間・人数を正確に覚えることが求められます。特に選択肢の作り方として「数字だけを変えた」誤り選択肢が多用されるため、数値の正確な記憶が合否を直接左右します。
+    </div>
+
+
+    <!-- H2-2 -->
+    <h2 id="sec2">2. 第二種の出題傾向 - 有害業務以外の関係法令10問を攻略すべし</h2>
+
+    <p>第二種衛生管理者の関係法令は、有害業務に関する内容を含まない10問構成です。オフィス系・サービス系など有害業務のない職場を対象とした規定が中心で、比較的馴染みやすい内容が多いのが特徴です。</p>
+
+    <h3>第二種 関係法令の頻出テーマ一覧</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>テーマ</th><th>主な出題内容</th><th>毎年の出題</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>衛生管理者の選任</strong></td>
+            <td>労働者数と選任人数の対応・選任期限・報告義務</td>
+            <td class="td-center">ほぼ毎年</td>
+          </tr>
+          <tr>
+            <td><strong>衛生委員会</strong></td>
+            <td>設置義務・構成メンバー・開催頻度・調査審議事項</td>
+            <td class="td-center">ほぼ毎年</td>
+          </tr>
+          <tr>
+            <td><strong>一般健康診断</strong></td>
+            <td>実施頻度・項目・結果の記録・事後措置・報告義務</td>
+            <td class="td-center">ほぼ毎年</td>
+          </tr>
+          <tr>
+            <td><strong>労働時間・休憩・休日</strong></td>
+            <td>法定労働時間・休憩の付与・週休制・変形労働時間制</td>
+            <td class="td-center">毎年</td>
+          </tr>
+          <tr>
+            <td><strong>年次有給休暇</strong></td>
+            <td>付与日数・比例付与・時季指定・計画的付与</td>
+            <td class="td-center">高頻度</td>
+          </tr>
+          <tr>
+            <td><strong>女性・年少者保護</strong></td>
+            <td>危険有害業務の就業制限・深夜業・坑内労働の禁止</td>
+            <td class="td-center">高頻度</td>
+          </tr>
+          <tr>
+            <td><strong>産業医</strong></td>
+            <td>選任義務・職務内容・権限・作業場巡視</td>
+            <td class="td-center">高頻度</td>
+          </tr>
+          <tr>
+            <td><strong>安全衛生教育</strong></td>
+            <td>雇入れ時教育・作業内容変更時・特別教育の対象業務</td>
+            <td class="td-center">中頻度</td>
+          </tr>
+          <tr>
+            <td><strong>ストレスチェック</strong></td>
+            <td>実施義務・対象者・実施者・面接指導の条件</td>
+            <td class="td-center">中頻度</td>
+          </tr>
+          <tr>
+            <td><strong>事務所衛生基準規則</strong></td>
+            <td>照度・換気・温度・トイレの設置基準</td>
+            <td class="td-center">中頻度</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>第二種の10問のうち、<strong>衛生管理体制（選任・委員会）・健康診断・労働時間の3テーマだけで例年5〜6問</strong>が出題されます。まずこの3テーマを完成させることが第二種合格の最短ルートです。</p>
+
+    <div class="box-point">
+      <div class="box-title">第二種 関係法令 戦略的な学習優先順位</div>
+      <ul>
+        <li>最優先（毎年必出）：衛生管理者の選任 ／ 衛生委員会 ／ 一般健康診断 ／ 法定労働時間・休憩</li>
+        <li>次に優先（高頻度）：産業医 ／ 年次有給休暇 ／ 女性・年少者保護</li>
+        <li>余裕があれば：安全衛生教育 ／ ストレスチェック ／ 事務所衛生基準</li>
+      </ul>
+      10問中7問以上の正答（70%）を目標に設定し、最優先テーマを完璧に仕上げてから次に進む学習順序がおすすめです。
+    </div>
+
+
+    <!-- H2-3 -->
+    <h2 id="sec3">3. 第一種の出題傾向 - 有害業務関連の上乗せ7問を攻略すべし</h2>
+
+    <p>第一種衛生管理者の関係法令は、第二種の10問（有害業務以外）に加えて、有害業務に関連する7問が上乗せされた計17問構成です。この有害業務関連の7問が第一種特有の難関であり、ここの対策が合否を分ける大きなポイントになります。</p>
+
+    <h3>有害業務関連7問の主な出題テーマ</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>テーマ</th><th>主な根拠法令</th><th>主な出題内容</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>特定化学物質</strong></td>
+            <td>特定化学物質障害予防規則（特化則）</td>
+            <td>第1類・第2類・第3類の区分、製造許可・使用禁止物質、作業主任者の選任、特殊健診の頻度</td>
+          </tr>
+          <tr>
+            <td><strong>有機溶剤</strong></td>
+            <td>有機溶剤中毒予防規則（有機則）</td>
+            <td>第1種・第2種・第3種の区分、屋内作業での規制、作業主任者、有機則健診</td>
+          </tr>
+          <tr>
+            <td><strong>電離放射線</strong></td>
+            <td>電離放射線障害防止規則（電離則）</td>
+            <td>管理区域の設定、線量限度、放射線業務従事者の健診、エックス線作業主任者</td>
+          </tr>
+          <tr>
+            <td><strong>粉じん</strong></td>
+            <td>粉じん障害防止規則（粉じん則）</td>
+            <td>特定粉じん作業・粉じん作業の区分、防じんマスクの使用義務、じん肺健診</td>
+          </tr>
+          <tr>
+            <td><strong>鉛</strong></td>
+            <td>鉛中毒予防規則（鉛則）</td>
+            <td>鉛業務の種類、作業主任者、鉛健診</td>
+          </tr>
+          <tr>
+            <td><strong>高気圧作業</strong></td>
+            <td>高気圧作業安全衛生規則</td>
+            <td>作業主任者の選任、健康診断、減圧の方法</td>
+          </tr>
+          <tr>
+            <td><strong>酸素欠乏</strong></td>
+            <td>酸素欠乏症等防止規則</td>
+            <td>第1種・第2種酸欠危険場所の区分、作業主任者、空気中の酸素濃度基準</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>有害業務関連7問の中で特に出題頻度が高いのは<strong>特定化学物質・有機溶剤・電離放射線</strong>の3テーマです。この3テーマだけで毎年4〜5問が出題されることも珍しくありません。</p>
+
+    <h3>第一種・第二種の関係法令 学習時間配分の目安</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>パート</th><th>対象試験</th><th>問題数</th><th>推奨学習時間</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>有害業務以外の関係法令</td>
+            <td>第一種・第二種共通</td>
+            <td class="td-num">10問</td>
+            <td class="td-center">約20〜25時間</td>
+          </tr>
+          <tr>
+            <td>有害業務関連の関係法令</td>
+            <td>第一種のみ</td>
+            <td class="td-num">7問</td>
+            <td class="td-center">約12〜15時間</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-caution">
+      <div class="box-title">有害業務関連は「名称と区分の対応」が最大の難関</div>
+      特化則・有機則・粉じん則などは、物質や作業の「第1類/第2類」「第1種/第2種」といった区分とその規制内容の対応が試験の中心です。たとえば特定化学物質の第1類は製造に厚生労働大臣の許可が必要、第2類は特殊健診が6ヶ月ごとに必要、といった細かい違いを覚えることが求められます。区分とセットで規制内容を整理した一覧表を作ると効果的です。
+    </div>
+
+
+    <!-- H2-4 -->
+    <h2 id="sec4">4. 頻出テーマ① 衛生管理体制（選任義務・衛生委員会）</h2>
+
+    <span class="freq-badge">出題頻度：毎年必出</span>
+
+    <p>衛生管理体制は関係法令で最も出題頻度が高いテーマです。「衛生管理者の選任義務」「産業医の選任義務」「衛生委員会の設置と運営」の3点を正確に覚えることが合格への第一歩です。</p>
+
+    <h3>衛生管理者の選任義務</h3>
+
+    <p>常時50人以上の労働者を使用する事業場は、衛生管理者を選任しなければなりません。労働者数に応じた選任人数は試験頻出の数値です。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>常時使用する労働者数</th><th>衛生管理者の選任人数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>50人以上200人以下</td><td class="td-num">1人以上</td></tr>
+          <tr><td>200人超～500人以下</td><td class="td-num">2人以上</td></tr>
+          <tr><td>500人超～1,000人以下</td><td class="td-num">3人以上</td></tr>
+          <tr><td>1,000人超～2,000人以下</td><td class="td-num">4人以上</td></tr>
+          <tr><td>2,000人超～3,000人以下</td><td class="td-num">5人以上</td></tr>
+          <tr><td>3,000人超</td><td class="td-num">6人以上</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>選任すべき事由が発生した日から<strong>14日以内</strong>に選任しなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>選任後は<strong>遅滞なく</strong>所轄の労働基準監督署長へ報告する義務がある</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>常時1,000人超の事業場（一定の有害業務は500人超）は<strong>専任の衛生管理者</strong>を1人以上置かなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>衛生管理者は<strong>少なくとも毎週1回</strong>、作業場等を巡視しなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>第一種免許は全業種で選任可能。第二種免許は有害業務のない業種（情報サービス・金融・卸売・小売など）に限定</div>
+      </div>
+    </div>
+
+    <h3>産業医の選任義務</h3>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>常時<strong>50人以上</strong>の事業場：産業医を1人以上選任する義務あり</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>常時<strong>3,000人超</strong>の事業場：産業医を2人以上選任する義務あり</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>常時<strong>1,000人以上</strong>の事業場または一定の有害業務に常時<strong>500人以上</strong>従事させる事業場では<strong>専属の産業医</strong>が必要</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>産業医は<strong>少なくとも毎月1回</strong>（産業医が提供する情報等を活用しての場合は2ヶ月に1回）作業場を巡視する</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>産業医は労働者の健康管理に関して<strong>勧告・指導・助言</strong>を行う権限を持つ</div>
+      </div>
+    </div>
+
+    <h3>衛生委員会の設置と運営</h3>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>常時<strong>50人以上</strong>の事業場に設置義務がある</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div><strong>毎月1回以上</strong>開催しなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>議長は<strong>総括安全衛生管理者または事業の実施を統括管理する者</strong>が務める</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>委員には産業医・衛生管理者・衛生に関し経験を有する労働者が含まれる</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>委員の半数は<strong>過半数労働組合（または過半数代表者）が推薦した者</strong>でなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>議事録は<strong>3年間</strong>保存し、労働者に周知しなければならない</div>
+      </div>
+    </div>
+
+    <div class="box-caution">
+      <div class="box-title">「安全委員会」と「衛生委員会」の混同に注意</div>
+      常時50人以上かつ一定の業種では「安全委員会」の設置も義務付けられています。安全委員会と衛生委員会を統合した「安全衛生委員会」を設置することも認められています。試験では「衛生委員会のみの設置が義務付けられる業種・規模」について問われることがあります。製造業・建設業など一定の業種は安全委員会も必要になる点を押さえておきましょう。
+    </div>
+
+
+    <!-- H2-5 -->
+    <h2 id="sec5">5. 頻出テーマ② 健康診断（種類・頻度・事後措置）</h2>
+
+    <span class="freq-badge">出題頻度：毎年必出</span>
+
+    <p>健康診断は、種類・実施頻度・記録の保存期間・事後措置・報告義務の各ポイントが毎年出題される超頻出テーマです。種類ごとに規定が異なるため、混同しないように整理することが重要です。</p>
+
+    <h3>健康診断の種類と実施頻度</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>種類</th><th>対象者</th><th>実施頻度</th><th>記録保存</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>雇入れ時健康診断</strong></td>
+            <td>常時使用する労働者（雇入れ時）</td>
+            <td class="td-center">雇入れの際</td>
+            <td class="td-center">5年</td>
+          </tr>
+          <tr>
+            <td><strong>定期健康診断</strong></td>
+            <td>常時使用する労働者</td>
+            <td class="td-center">1年以内ごとに1回</td>
+            <td class="td-center">5年</td>
+          </tr>
+          <tr>
+            <td><strong>特定業務従事者健康診断</strong></td>
+            <td>深夜業など特定業務従事者</td>
+            <td class="td-center">6ヶ月以内ごとに1回</td>
+            <td class="td-center">5年</td>
+          </tr>
+          <tr>
+            <td><strong>海外派遣労働者健康診断</strong></td>
+            <td>6ヶ月以上海外派遣する労働者</td>
+            <td class="td-center">派遣前・帰国後</td>
+            <td class="td-center">5年</td>
+          </tr>
+          <tr>
+            <td><strong>給食従業員健康診断</strong></td>
+            <td>事業場附属の食堂・炊事場の従業員</td>
+            <td class="td-center">雇入れ・配置換えの際</td>
+            <td class="td-center">5年</td>
+          </tr>
+          <tr>
+            <td><strong>特殊健康診断（有害業務）</strong></td>
+            <td>有害業務従事者（特化則・有機則など）</td>
+            <td class="td-center">6ヶ月以内ごとに1回</td>
+            <td class="td-center">5年（一部30年）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>定期健康診断の結果は、常時<strong>50人以上</strong>の事業場では<strong>所轄労働基準監督署長に報告</strong>しなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>雇入れ時健康診断では<strong>医師による健診結果の証明書</strong>を提出させることで省略できる項目がある</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>パートタイム労働者でも、週の所定労働時間が通常の労働者の<strong>4分の3以上</strong>であれば定期健康診断の対象</div>
+      </div>
+    </div>
+
+    <h3>健康診断の事後措置</h3>
+
+    <p>健康診断後の事業者の義務も重要な出題テーマです。結果を受けて事業者がとるべき措置の流れを把握しておきましょう。</p>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>健康診断の結果は<strong>本人に通知</strong>しなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>異常の所見がある労働者について、<strong>3ヶ月以内</strong>に産業医等の意見を聴かなければならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>医師の意見を勘案し、必要な場合は<strong>就業場所の変更・作業の転換・労働時間の短縮</strong>などの措置を講じる</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>措置の内容は<strong>衛生委員会に報告</strong>するとともに、健康診断個人票に医師の意見を記載する</div>
+      </div>
+    </div>
+
+    <div class="box-info">
+      <div class="box-title">特殊健康診断の記録保存期間「30年」に注意</div>
+      特殊健康診断の記録保存期間は原則5年ですが、一部の有害物質（特定化学物質の第1類・第2類の一部、電離放射線など）については<strong>30年間</strong>の保存が義務付けられています。「5年か30年か」という選択肢で問われるため、30年保存が必要な物質・業務の種類を別途確認しておきましょう。
+    </div>
+
+
+    <!-- CTA（中間） -->
+    <div class="cta-block">
+      <h3>📝 関係法令の過去問を今すぐ演習しよう</h3>
+      <p>読んだ知識はすぐ問題で確認するのが定着の近道です。当サイトでは関係法令の過去問を年度別・科目別に演習できます。</p>
+      <div class="cta-btns">
+        <a href="/type1/" class="cta-btn-1">第一種 問題演習</a>
+        <a href="/type2/" class="cta-btn-2">第二種 問題演習</a>
+      </div>
+    </div>
+
+
+    <!-- H2-6 -->
+    <h2 id="sec6">6. 頻出テーマ③ 労働時間・休憩・休日</h2>
+
+    <span class="freq-badge">出題頻度：毎年必出</span>
+
+    <p>労働時間・休憩・休日に関する規定は労働基準法から出題されます。「法定労働時間の原則」「休憩の付与方法」「休日の与え方」「時間外・休日労働の36協定」「年次有給休暇」の各ポイントが毎年問われます。</p>
+
+    <h3>法定労働時間・休憩・休日の基本</h3>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>法定労働時間：<strong>1日8時間・週40時間</strong>が原則（特例事業場は週44時間）</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>休憩時間：労働時間が<strong>6時間超→45分以上、8時間超→60分以上</strong>付与する義務</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>休憩は<strong>労働時間の途中</strong>に与えなければならない（前後に置くことは不可）</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>休憩は<strong>一斉に</strong>与えることが原則（労使協定で例外あり）</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>法定休日：<strong>毎週1日</strong>または<strong>4週4日</strong>の休日を与えなければならない</div>
+      </div>
+    </div>
+
+    <h3>変形労働時間制・裁量労働制</h3>
+
+    <p>変形労働時間制・裁量労働制は試験でよく出るテーマです。種類と適用条件を混同しないよう整理しておきましょう。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>制度</th><th>単位期間</th><th>要件</th><th>上限</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1ヶ月単位の変形労働時間制</strong></td>
+            <td>1ヶ月以内</td>
+            <td>労使協定または就業規則等</td>
+            <td>週平均40時間</td>
+          </tr>
+          <tr>
+            <td><strong>1年単位の変形労働時間制</strong></td>
+            <td>1ヶ月超〜1年以内</td>
+            <td>労使協定（届出必要）</td>
+            <td>週平均40時間・1日10時間・週52時間</td>
+          </tr>
+          <tr>
+            <td><strong>フレックスタイム制</strong></td>
+            <td>清算期間（最大3ヶ月）</td>
+            <td>就業規則＋労使協定</td>
+            <td>清算期間を平均して週40時間</td>
+          </tr>
+          <tr>
+            <td><strong>専門業務型裁量労働制</strong></td>
+            <td>—</td>
+            <td>労使協定（19業務が対象）</td>
+            <td>みなし労働時間を協定で定める</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>年次有給休暇</h3>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>雇入れの日から<strong>6ヶ月間継続勤務</strong>し、全労働日の<strong>8割以上</strong>出勤した場合に<strong>10日</strong>の有給休暇が付与される</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>最大付与日数は勤続<strong>6年6ヶ月以上で20日</strong></div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>年10日以上の有給が付与された労働者に対して、事業者は年<strong>5日</strong>の時季指定が義務付けられている（2019年改正）</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>有給休暇の時効は<strong>2年</strong>（付与日から2年で消滅）</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>週所定労働日数が少ない労働者（パート等）には<strong>比例付与</strong>の規定がある</div>
+      </div>
+    </div>
+
+    <div class="box-point">
+      <div class="box-title">労働時間の「特例事業場（週44時間）」も押さえておく</div>
+      商業・映画・演劇業・保健衛生業・接客娯楽業などの特例事業場では、常時10人未満の場合に限り週44時間の労働時間が認められています。「週40時間か44時間か」という数値の選択肢として出題されるため、特例事業場の業種リストを把握しておくと安心です。
+    </div>
+
+
+    <!-- H2-7 -->
+    <h2 id="sec7">7. 頻出テーマ④ 有害業務関連の法令（特化則・有機則・電離則）</h2>
+
+    <span class="freq-badge-orange">第一種のみ出題</span>
+
+    <p>有害業務関連の法令は第一種固有の出題範囲であり、7問のうち毎年4〜5問がこのテーマから出ます。規制の内容が物質・業務ごとに細かく異なるため、整理して覚えることが求められます。</p>
+
+    <h3>特定化学物質障害予防規則（特化則）</h3>
+
+    <p>特化則は、がん・重篤な慢性疾患を引き起こすおそれがある特定の化学物質を取り扱う業務について、製造・使用・健康診断・作業環境管理を規制するものです。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>区分</th><th>特徴</th><th>主な物質例</th><th>主な規制</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>第1類</strong></td>
+            <td>製造等に厚生労働大臣の許可が必要</td>
+            <td>ベンゾトリクロリド・ジクロルベンジジンなど</td>
+            <td>製造許可・特殊健診（6ヶ月ごと）・記録30年保存</td>
+          </tr>
+          <tr>
+            <td><strong>第2類</strong></td>
+            <td>取扱い規制がある（許可不要）</td>
+            <td>塩素・クロム酸・シアン化水素など多数</td>
+            <td>作業環境測定・特殊健診（6ヶ月ごと）・作業主任者</td>
+          </tr>
+          <tr>
+            <td><strong>第3類</strong></td>
+            <td>漏洩・拡散防止が中心</td>
+            <td>アンモニア・塩酸・硫酸など</td>
+            <td>設備の密閉化・漏洩防止措置</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>有機溶剤中毒予防規則（有機則）</h3>
+
+    <p>有機則は、有機溶剤を取り扱う業務での健康障害を防ぐための規則です。有機溶剤は第1種・第2種・第3種に分類され、許容消費量・換気の基準が異なります。</p>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div><strong>第1種有機溶剤</strong>：毒性が最も強い（クロロホルムなど）。屋内では密閉設備または局所排気装置の設置が義務</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div><strong>第2種有機溶剤</strong>：最も種類が多い（トルエン・キシレン・酢酸エチルなど）。屋内では局所排気装置または全体換気装置が必要</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div><strong>第3種有機溶剤</strong>：毒性が比較的低い（ガソリン・石油エーテルなど）。換気装置の設置は任意だが保護具の着用が必要</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>有機溶剤作業主任者の選任・有機則健診（6ヶ月ごと）・作業環境測定（6ヶ月ごと）が義務</div>
+      </div>
+    </div>
+
+    <h3>電離放射線障害防止規則（電離則）</h3>
+
+    <div class="key-points">
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div><strong>管理区域</strong>：外部放射線の実効線量が3ヶ月につき1.3mSvを超えるおそれのある区域に設定が必要</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>放射線業務従事者の<strong>線量限度</strong>：実効線量は5年間で100mSv・かつ1年間で50mSvを超えてはならない</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>放射線業務従事者には<strong>6ヶ月以内ごとに1回</strong>の健康診断実施が義務（記録は30年保存）</div>
+      </div>
+      <div class="key-point-item">
+        <div class="key-point-mark">✓</div>
+        <div>エックス線装置を用いる作業・ガンマ線照射装置を用いる作業では<strong>エックス線作業主任者</strong>または<strong>ガンマ線透過写真撮影作業主任者</strong>の選任が必要</div>
+      </div>
+    </div>
+
+    <div class="box-caution">
+      <div class="box-title">有害業務関連に共通する「作業主任者」の選任義務</div>
+      特化則・有機則・電離則・粉じん則など、有害業務関連の多くの規則で「作業主任者」の選任が義務付けられています。試験では「どの業務でどの作業主任者が必要か」という対応関係が問われます。特定化学物質作業主任者・有機溶剤作業主任者・エックス線作業主任者・特定粉じん作業主任者など、主要な作業主任者の種類と対応する業務を整理した一覧を作って覚えることをおすすめします。
+    </div>
+
+
+    <!-- H2-8 -->
+    <h2 id="sec8">8. 関係法令を効率よく攻略する3つの学習法</h2>
+
+    <p>関係法令は覚える数値・規定が多い科目ですが、効率的なアプローチで学習すれば短期間で得点源にできます。合格者が実践している3つの学習法を紹介します。</p>
+
+    <h3>学習法① 数値だけの一覧表を自分で作る</h3>
+
+    <p>関係法令で出題される数値（人数・時間・頻度・保存期間）は限られています。すべての重要数値を1枚の表にまとめた「数値チートシート」を自分で作ることが最も効果的な学習法です。</p>
+
+    <p>具体的には「選任義務は50人以上」「産業医は50人以上・専属は1,000人以上」「衛生委員会は毎月1回」「定期健診は1年ごと・特定業務は6ヶ月ごと」「議事録は3年保存・健診記録は5年保存（一部30年）」といった数値を一覧化します。この表を通勤時間に見返すだけで、試験に出る数値の大半をカバーできます。</p>
+
+    <h3>学習法② 過去問の「誤り選択肢」から学ぶ</h3>
+
+    <p>関係法令の選択肢は、数値だけを変えた誤りパターンが非常に多く使われます。たとえば「衛生委員会の開催は2ヶ月に1回」（正しくは毎月1回）、「議事録の保存期間は5年」（正しくは3年）といった形で、数値を変えた誤り選択肢が繰り返し登場します。</p>
+
+    <p>過去問を解く際は「なぜこの選択肢は誤りなのか」を必ず確認し、正しい数値を上書きするように学習することで、出題者が仕掛ける数値変えの引っかけに対応できる力が身につきます。</p>
+
+    <h3>学習法③ 第一種は有害業務関連を「別テーマ」として集中攻略する</h3>
+
+    <p>第一種を受験する方は、有害業務以外の10問と有害業務関連の7問を<strong>別々のフェーズで学習する</strong>ことをおすすめします。まず第二種と共通の10問パートを完成させてから、有害業務関連の7問に集中投資するアプローチが効率的です。</p>
+
+    <p>有害業務関連は、特化則・有機則・電離則の3法令だけで例年4問以上出題されるため、この3法令を優先的に攻略するだけで大きな得点アップが期待できます。粉じん則・鉛則・高圧則は余裕があれば追加で押さえる程度で構いません。</p>
+
+    <div class="box-point">
+      <div class="box-title">関係法令 学習の重要ポイントまとめ</div>
+      <ul>
+        <li>数値（人数・頻度・保存期間）を一覧化した「数値チートシート」を自作する</li>
+        <li>過去問の誤り選択肢のパターン（数値だけ変える）を把握して対策する</li>
+        <li>第一種は有害業務以外10問を先に完成させ、その後有害業務関連7問に集中する</li>
+        <li>特化則・有機則・電離則の3法令を最優先で攻略する</li>
+        <li>作業主任者の種類と対応業務を対応表で整理する</li>
+        <li>法改正情報を最新テキストで確認する（数値が変わっている場合あり）</li>
+      </ul>
+    </div>
+
+
+    <!-- H2-9 -->
+    <h2 id="sec9">9. まとめ</h2>
+
+    <div class="summary-box">
+      <h3>関係法令の出題傾向 まとめ</h3>
+      <ul>
+        <li>関係法令は第一種17問・第二種10問と<strong>全科目中最多の出題数</strong>で合否を大きく左右する</li>
+        <li>第二種は衛生管理体制・健康診断・労働時間の<strong>3テーマで5〜6問</strong>が出る——ここを押さえれば合格圏</li>
+        <li>第一種固有の有害業務7問は<strong>特化則・有機則・電離則</strong>が最頻出——この3法令を優先する</li>
+        <li>出題の中心は<strong>数値（人数・頻度・保存期間）の正確な記憶</strong>——数値チートシートを自作して活用する</li>
+        <li>衛生管理者は<strong>50人以上・14日以内に選任・毎週1回巡視</strong></li>
+        <li>産業医は<strong>50人以上・1,000人超で専属・毎月1回巡視</strong></li>
+        <li>衛生委員会は<strong>50人以上・毎月1回開催・議事録3年保存</strong></li>
+        <li>健康診断の記録保存は原則<strong>5年</strong>（特化則第1類・電離放射線等は<strong>30年</strong>）</li>
+        <li>過去問の誤り選択肢は<strong>「数値だけ変えた」パターン</strong>が多い——解説まで必ず確認する</li>
+      </ul>
+    </div>
+
+    <p>関係法令は「覚えることが多くて難しい」という印象を持たれやすい科目ですが、出題されるポイントは意外と絞られています。毎年繰り返し出題されるテーマの数値を正確に覚え、過去問演習で問われ方のパターンを体得することが、関係法令攻略の王道です。当サイトの問題演習機能で、今日から得点を積み上げていきましょう。</p>
+
+    <!-- CTA（末尾） -->
+    <div class="cta-block">
+      <h3>📝 関係法令の過去問演習をはじめよう</h3>
+      <p>過去問＋オリジナル想定問題を無料で演習。科目別フィルターで関係法令だけに絞った演習ができます。</p>
+      <div class="cta-btns">
+        <a href="/type1/" class="cta-btn-1">第一種 問題演習</a>
+        <a href="/type2/" class="cta-btn-2">第二種 問題演習</a>
+      </div>
+    </div>
+
+    <div class="related">
+      <div class="related-title">関連記事</div>
+      <div class="related-links">
+        <a href="/articles/subject/law-numbers/" class="related-link">
+          <span class="related-link-arrow">→</span>
+          関係法令の数字を完全攻略【選任人数・期間・頻度まとめ】
+        </a>
+        <a href="/articles/subject/physiology-points/" class="related-link">
+          <span class="related-link-arrow">→</span>
+          労働生理の頻出テーマ10選【得点源にする攻略法】
+        </a>
+        <a href="/articles/study/how-to-study/" class="related-link">
+          <span class="related-link-arrow">→</span>
+          衛生管理者試験の勉強法【独学で一発合格するロードマップ】
+        </a>
+        <a href="/articles/about/pass-rate/" class="related-link">
+          <span class="related-link-arrow">→</span>
+          衛生管理者試験の合格率・難易度【令和6年度最新版】
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
