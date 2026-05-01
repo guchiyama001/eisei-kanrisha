@@ -140,9 +140,9 @@
         <div class="filter-row" id="filterRow">
           <button class="filter-btn active" data-field="all">全分野</button>
           <div class="filter-sub-row">
-            <button class="filter-btn" data-field="law">⚖️ 関係法令</button>
-            <button class="filter-btn" data-field="hygiene">🛡️ 労働衛生</button>
-            <button class="filter-btn" data-field="physiology">🫀 労働生理</button>
+            <button class="filter-btn" data-field="law">関係法令</button>
+            <button class="filter-btn" data-field="hygiene">労働衛生</button>
+            <button class="filter-btn" data-field="physiology">労働生理</button>
           </div>
         </div>
       </div>
@@ -212,7 +212,7 @@
       else { banner.classList.add('hidden'); }
     }
 
-    const FIELD_LABEL = { law: '⚖️ 関係法令', hygiene: '🛡️ 労働衛生', physiology: '🫀 労働生理' };
+    const FIELD_LABEL = { law: '関係法令', hygiene: '労働衛生', physiology: '労働生理' };
     const FIELD_BADGE_CLASS = { law: 'badge-law', hygiene: 'badge-hygiene', physiology: 'badge-physiology' };
 
     function buildQuestions(selectedField, selectedSource) {
