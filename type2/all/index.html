@@ -8,252 +8,89 @@
   <link rel="icon" href="/favicon.ico">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-      background: #fdfcf5;
-      color: #1a1a1a;
-      min-height: 100vh;
-    }
-    header {
-      background: #1a2e1a;
-      color: #fff;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .back-btn {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 20px;
-      line-height: 1;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif; background: #f5f5f0; color: #1a1a1a; min-height: 100vh; }
+    header { background: #1a2e1a; color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
+    .back-btn { color: #aaa; text-decoration: none; font-size: 20px; line-height: 1; }
     .back-btn:hover { color: #fff; }
     header h1 { font-size: 15px; font-weight: 600; }
     .header-sub { font-size: 11px; color: #88cc88; margin-top: 2px; }
-
     .container { max-width: 640px; margin: 0 auto; padding: 16px; }
-
-    .start-panel {
-      background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+    .stats-card { background: #fff; border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; }
+    .stats-grid { display: flex; flex: 1; }
+    .stat-item { flex: 1; text-align: center; padding: 0 8px; border-right: 1px solid #f0f0f0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-value { font-size: 22px; font-weight: 700; color: #1a5f1a; line-height: 1.2; }
+    .stat-label { font-size: 10px; color: #999; margin-top: 3px; }
+    .stats-reset-btn { background: none; border: none; color: #ccc; font-size: 11px; cursor: pointer; padding: 4px 0 4px 12px; flex-shrink: 0; }
+    .stats-reset-btn:hover { color: #e57373; }
+    .stats-card-title { font-size: 11px; color: #bbb; margin-bottom: 10px; }
+    .weak-banner { background: #fff3e0; border: 1.5px solid #f9ab00; border-radius: 10px; padding: 12px 16px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; transition: background 0.15s; }
+    .weak-banner:hover { background: #ffe8b2; }
+    .weak-banner-left { display: flex; align-items: center; gap: 10px; }
+    .weak-banner-icon { font-size: 20px; }
+    .weak-banner-text { font-size: 13px; font-weight: 600; color: #7b4f00; }
+    .weak-banner-sub { font-size: 11px; color: #a07040; margin-top: 2px; }
+    .weak-banner-count { background: #f9ab00; color: #fff; font-size: 13px; font-weight: 700; border-radius: 20px; padding: 3px 12px; flex-shrink: 0; }
+    .weak-banner.hidden { display: none; }
+    .start-panel { background: #fff; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .start-panel h2 { font-size: 18px; margin-bottom: 8px; }
-    .start-panel p { font-size: 14px; color: #1e3a5f; margin-bottom: 20px; }
-
+    .start-panel p { font-size: 14px; color: #1a5f1a; margin-bottom: 20px; }
     .filter-section { margin-bottom: 16px; }
     .filter-label { font-size: 12px; color: #888; margin-bottom: 8px; text-align: left; }
-    .filter-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
-    .filter-sub-row {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .filter-row {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-    .filter-btn {
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 2px solid #1e3a5f;
-      background: #fff;
-      color: #1e3a5f;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.15s;
-      min-width: 100px;
-    }
-    .filter-btn:hover:not(.active) { background: #f0ebe3; border-color: #1e3a5f; }
-    .filter-btn.active { background: #c8763a; border-color: #c8763a; color: #fff; }
-
-    .source-row {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    .source-btn {
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 2px solid #1e3a5f;
-      background: #fff;
-      color: #1e3a5f;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
+    .source-row { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
+    .source-btn { padding: 6px 10px; border-radius: 20px; border: 2px solid #1a5f1a; background: #fff; color: #1a5f1a; font-size: 12px; cursor: pointer; transition: all 0.15s; white-space: nowrap; min-width: 88px; }
+    .source-btn:hover:not(.active) { background: #f0ebe3; }
     .source-btn.active { background: #c8763a; border-color: #c8763a; color: #fff; }
-
-    .start-btn {
-      background: #1e3a5f;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 14px 32px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      width: 100%;
-      max-width: 280px;
-      transition: background 0.15s;
-    }
-    .start-btn:hover { background: #162d4a; }
+    .filter-sub-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .filter-row { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .filter-btn { padding: 6px 14px; border-radius: 20px; border: 2px solid #1a5f1a; background: #fff; color: #1a5f1a; font-size: 13px; cursor: pointer; transition: all 0.15s; min-width: 100px; }
+    .filter-btn:hover:not(.active) { background: #f0ebe3; }
+    .filter-btn.active { background: #c8763a; border-color: #c8763a; color: #fff; }
+    .start-btn { background: #1a5f1a; color: #fff; border: none; border-radius: 8px; padding: 14px 32px; font-size: 16px; font-weight: 700; cursor: pointer; width: 100%; max-width: 280px; transition: background 0.15s; }
+    .start-btn:hover { background: #124912; }
     .total-count { font-size: 13px; color: #888; margin-top: 12px; }
-
     .quiz-panel { display: none; }
-    .progress-bar-wrap {
-      background: #e0e0e0;
-      border-radius: 4px;
-      height: 6px;
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      background: #1a2e1a;
-      border-radius: 4px;
-      transition: width 0.3s;
-    }
-    .progress-text {
-      font-size: 12px;
-      color: #888;
-      text-align: right;
-      margin-bottom: 8px;
-    }
-    .field-badge {
-      display: inline-block;
-      font-size: 11px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
+    .progress-bar-wrap { background: #e0e0e0; border-radius: 4px; height: 6px; margin-bottom: 16px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: #1a2e1a; border-radius: 4px; transition: width 0.3s; }
+    .progress-text { font-size: 12px; color: #888; text-align: right; margin-bottom: 8px; }
+    .quiz-panel.weak-mode .progress-bar-fill { background: #e67e22; }
+    .weak-mode-indicator { display: none; background: #fff3e0; border: 1px solid #f9ab00; border-radius: 6px; padding: 6px 12px; font-size: 12px; color: #7b4f00; font-weight: 600; margin-bottom: 10px; text-align: center; }
+    .quiz-panel.weak-mode .weak-mode-indicator { display: block; }
+    .field-badge { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; font-weight: 600; }
     .badge-law { background: #e8f0fe; color: #1967d2; }
     .badge-hygiene { background: #e6f4ea; color: #1e8e3e; }
     .badge-physiology { background: #fce8e6; color: #c5221f; }
-    .source-tag {
-      display: inline-block;
-      font-size: 10px;
-      padding: 2px 8px;
-      border-radius: 20px;
-      background: #f0f0f0;
-      color: #666;
-      margin-left: 6px;
-      vertical-align: middle;
-    }
-
-    .question-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-    .question-text {
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
+    .question-card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .source-tag { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 20px; background: #f0f0f0; color: #666; margin-left: 6px; vertical-align: middle; }
+    .question-text { font-size: 15px; font-weight: 600; line-height: 1.6; margin-bottom: 16px; }
     .choices { display: flex; flex-direction: column; gap: 10px; }
-    .choice-btn {
-      text-align: left;
-      padding: 12px 16px;
-      border-radius: 8px;
-      border: 2px solid #e0e0e0;
-      background: #fafafa;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.15s;
-      line-height: 1.4;
-    }
-    .choice-btn:hover:not(:disabled) { border-color: #1e3a5f; background: #f0f8f0; }
+    .choice-btn { text-align: left; padding: 12px 16px; border-radius: 8px; border: 2px solid #e0e0e0; background: #fafafa; font-size: 14px; cursor: pointer; transition: all 0.15s; line-height: 1.4; }
+    .choice-btn:hover:not(:disabled) { border-color: #1a5f1a; background: #f0f8f0; }
     .choice-btn.correct { border-color: #1e8e3e; background: #e6f4ea; color: #1e8e3e; font-weight: 700; }
     .choice-btn.wrong { border-color: #c5221f; background: #fce8e6; color: #c5221f; }
     .choice-btn.show-correct { border-color: #1e8e3e; background: #e6f4ea; }
-
-    .explanation {
-      display: none;
-      background: #fff8e1;
-      border-left: 4px solid #f9ab00;
-      border-radius: 0 8px 8px 0;
-      padding: 12px 14px;
-      font-size: 13px;
-      line-height: 1.6;
-      margin-top: 12px;
-    }
+    .explanation { display: none; background: #fff8e1; border-left: 4px solid #f9ab00; border-radius: 0 8px 8px 0; padding: 12px 14px; font-size: 13px; line-height: 1.6; margin-top: 12px; }
     .explanation.show { display: block; }
-
-    .next-btn {
-      display: none;
-      background: #1a2e1a;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 13px 24px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 16px;
-      transition: background 0.15s;
-    }
+    .weak-feedback { display: none; margin-top: 8px; font-size: 11px; color: #e67e22; text-align: center; }
+    .weak-feedback.show { display: block; }
+    .next-btn { display: none; background: #1a2e1a; color: #fff; border: none; border-radius: 8px; padding: 13px 24px; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; margin-top: 16px; transition: background 0.15s; }
     .next-btn:hover { background: #2a4e2a; }
     .next-btn.show { display: block; }
-
-    .done-panel {
-      display: none;
-      background: #fff;
-      border-radius: 12px;
-      padding: 32px 24px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+    .done-panel { display: none; background: #fff; border-radius: 12px; padding: 32px 24px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .done-panel h2 { font-size: 22px; margin-bottom: 8px; }
-    .score-big { font-size: 52px; font-weight: 900; color: #1e3a5f; margin: 12px 0; }
-    .score-label { font-size: 14px; color: #1e3a5f; margin-bottom: 24px; }
+    .score-big { font-size: 52px; font-weight: 900; color: #1a5f1a; margin: 12px 0; }
+    .score-label { font-size: 14px; color: #1a5f1a; margin-bottom: 8px; }
+    .done-stats-summary { background: #f0f8f0; border-radius: 8px; padding: 10px 16px; margin: 12px 0 20px; font-size: 13px; color: #555; }
+    .done-stats-summary span { font-weight: 700; color: #1a5f1a; }
+    .done-weak-summary { background: #fff3e0; border: 1px solid #f9ab00; border-radius: 8px; padding: 10px 16px; margin: 0 0 20px; font-size: 13px; color: #7b4f00; }
+    .done-weak-summary span { font-weight: 700; }
     .done-btns { display: flex; flex-direction: column; gap: 10px; }
-    .retry-btn {
-      background: #1a2e1a;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 13px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .top-btn {
-      background: #fff;
-      color: #1e3a5f;
-      border: 2px solid #1e3a5f;
-      border-radius: 8px;
-      padding: 11px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-    }
-    .breadcrumb {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 16px;
-    }
-    .breadcrumb a { color: #1e3a5f; text-decoration: none; }
+    .retry-btn { background: #1a2e1a; color: #fff; border: none; border-radius: 8px; padding: 13px; font-size: 15px; font-weight: 700; cursor: pointer; }
+    .weak-retry-btn { background: #e67e22; color: #fff; border: none; border-radius: 8px; padding: 13px; font-size: 15px; font-weight: 700; cursor: pointer; display: none; }
+    .weak-retry-btn.show { display: block; }
+    .top-btn { background: #fff; color: #1a5f1a; border: 2px solid #1a5f1a; border-radius: 8px; padding: 11px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: block; }
+    .breadcrumb { font-size: 12px; color: #888; margin-bottom: 16px; }
+    .breadcrumb a { color: #1a5f1a; text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
   </style>
 </head>
@@ -271,23 +108,44 @@
       <a href="/">トップ</a> › <a href="/type2/">第二種</a> › 全問ランダム
     </div>
 
-    <!-- スタートパネル -->
+    <div class="stats-card" id="statsCard">
+      <div style="flex:1">
+        <div class="stats-card-title"> 累積学習記録</div>
+        <div class="stats-grid">
+          <div class="stat-item"><div class="stat-value" id="statTotal">0</div><div class="stat-label">総解答数</div></div>
+          <div class="stat-item"><div class="stat-value" id="statCorrect">0</div><div class="stat-label">累積正解</div></div>
+          <div class="stat-item"><div class="stat-value" id="statRate">-</div><div class="stat-label">正答率</div></div>
+          <div class="stat-item"><div class="stat-value" id="statWeak">0</div><div class="stat-label">苦手問題数</div></div>
+        </div>
+      </div>
+      <button class="stats-reset-btn" id="statsResetBtn">リセット</button>
+    </div>
+
+    <div class="weak-banner hidden" id="weakBanner">
+      <div class="weak-banner-left">
+        <span class="weak-banner-icon">🎯</span>
+        <div>
+          <div class="weak-banner-text">苦手問題だけ集中特訓</div>
+          <div class="weak-banner-sub">間違えた問題だけを出題します</div>
+        </div>
+      </div>
+      <span class="weak-banner-count" id="weakBannerCount">0問</span>
+    </div>
+
     <div class="start-panel" id="startPanel">
       <h2>全問ランダム一問一答</h2>
       <p>オリジナル想定問題・過去問から全分野をランダムに出題します。</p>
-
       <div class="filter-section">
         <div class="filter-label">分野を選ぶ</div>
         <div class="filter-row" id="filterRow">
-          <button class="filter-btn active " data-field="all">全分野</button>
+          <button class="filter-btn active" data-field="all">全分野</button>
           <div class="filter-sub-row">
-            <button class="filter-btn" data-field="law">⚖️ 関係法令</button>
-            <button class="filter-btn" data-field="hygiene">🛡️ 労働衛生</button>
-            <button class="filter-btn" data-field="physiology">🫀 労働生理</button>
+            <button class="filter-btn" data-field="law">関係法令</button>
+            <button class="filter-btn" data-field="hygiene">労働衛生</button>
+            <button class="filter-btn" data-field="physiology">労働生理</button>
           </div>
         </div>
       </div>
-
       <div class="filter-section">
         <div class="filter-label">問題ソース</div>
         <div class="source-row" id="sourceRow">
@@ -296,18 +154,14 @@
           <button class="source-btn" data-source="past">過去問のみ</button>
         </div>
       </div>
-
       <button class="start-btn" id="startBtn">スタート</button>
       <div class="total-count" id="totalCount"></div>
     </div>
 
-    <!-- 問題パネル -->
     <div class="quiz-panel" id="quizPanel">
+      <div class="weak-mode-indicator">🎯 苦手問題 集中特訓モード</div>
       <div class="progress-text" id="progressText"></div>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-fill" id="progressBar"></div>
-      </div>
-
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
       <div class="question-card">
         <div>
           <span class="field-badge" id="fieldBadge"></span>
@@ -316,17 +170,19 @@
         <div class="question-text" id="questionText"></div>
         <div class="choices" id="choices"></div>
         <div class="explanation" id="explanation"></div>
+        <div class="weak-feedback" id="weakFeedback"></div>
       </div>
-
       <button class="next-btn" id="nextBtn">次の問題へ</button>
     </div>
 
-    <!-- 終了パネル -->
     <div class="done-panel" id="donePanel">
       <h2>🎉 お疲れ様でした！</h2>
       <div class="score-big" id="scoreBig"></div>
       <div class="score-label" id="scoreLabel"></div>
+      <div class="done-stats-summary" id="doneStatsSummary"></div>
+      <div class="done-weak-summary" id="doneWeakSummary"></div>
       <div class="done-btns">
+        <button class="weak-retry-btn" id="weakRetryBtn">🎯 苦手問題だけ解き直す</button>
         <button class="retry-btn" id="retryBtn">もう一度チャレンジ</button>
         <a href="/type2/" class="top-btn">第二種トップに戻る</a>
         <a href="/" class="top-btn">トップに戻る</a>
@@ -336,168 +192,169 @@
 
   <script src="/js/data.js"></script>
   <script>
-    const FIELD_LABEL = { law: '⚖️ 関係法令', hygiene: '🛡️ 労働衛生', physiology: '🫀 労働生理' };
+    const LS_STATS = 'eisei_t2_stats';
+    const LS_WEAK  = 'eisei_t2_weak';
+
+    function qId(q) { return q.q.slice(0, 30); }
+    function loadStats() { try { return JSON.parse(localStorage.getItem(LS_STATS)) || { total: 0, correct: 0 }; } catch(e) { return { total: 0, correct: 0 }; } }
+    function saveStats(s) { localStorage.setItem(LS_STATS, JSON.stringify(s)); }
+    function loadWeak() { try { return new Set(JSON.parse(localStorage.getItem(LS_WEAK)) || []); } catch(e) { return new Set(); } }
+    function saveWeak(w) { localStorage.setItem(LS_WEAK, JSON.stringify([...w])); }
+
+    function renderStats() {
+      const s = loadStats(); const w = loadWeak();
+      document.getElementById('statTotal').textContent   = s.total.toLocaleString();
+      document.getElementById('statCorrect').textContent = s.correct.toLocaleString();
+      document.getElementById('statRate').textContent    = s.total > 0 ? Math.round(s.correct / s.total * 100) + '%' : '-';
+      document.getElementById('statWeak').textContent    = w.size;
+      const banner = document.getElementById('weakBanner');
+      if (w.size > 0) { banner.classList.remove('hidden'); document.getElementById('weakBannerCount').textContent = w.size + '問'; }
+      else { banner.classList.add('hidden'); }
+    }
+
+    const FIELD_LABEL = { law: '関係法令', hygiene: '労働衛生', physiology: '労働生理' };
     const FIELD_BADGE_CLASS = { law: 'badge-law', hygiene: 'badge-hygiene', physiology: 'badge-physiology' };
 
     function buildQuestions(selectedField, selectedSource) {
       let all = [];
       const fields = selectedField === 'all' ? ['law', 'hygiene', 'physiology'] : [selectedField];
-
-      // オリジナル問題
       if (selectedSource === 'all' || selectedSource === 'original') {
         const src = originalData[2];
-        fields.forEach(f => {
-          (src[f] || []).forEach(q => all.push({ ...q, field: f, source: 'オリジナル' }));
-        });
+        fields.forEach(f => { (src[f] || []).forEach(q => all.push({ ...q, field: f, source: 'オリジナル' })); });
       }
-
-      // 過去問
       if (selectedSource === 'all' || selectedSource === 'past') {
         const src = pastData[2];
         fields.forEach(f => {
           const yearData = src[f] || {};
           Object.keys(yearData).forEach(year => {
-            (yearData[year] || []).forEach(q => {
-              const y = parseInt(year);
-              const label = `R${y - 2018}年度`;
-              all.push({ ...q, field: f, source: label });
-            });
+            (yearData[year] || []).forEach(q => { const y = parseInt(year); all.push({ ...q, field: f, source: `R${y - 2018}年度` }); });
           });
         });
       }
-
-      // Fisher-Yates shuffle
-      for (let i = all.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [all[i], all[j]] = [all[j], all[i]];
-      }
+      for (let i = all.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [all[i], all[j]] = [all[j], all[i]]; }
       return all;
     }
 
-    let questions = [];
-    let current = 0;
-    let correct = 0;
-    let answered = false;
-    let selectedField = 'all';
-    let selectedSource = 'all';
+    function buildWeakQuestions() {
+      const w = loadWeak(); if (w.size === 0) return [];
+      return buildQuestions('all', 'all').filter(q => w.has(qId(q)));
+    }
+
+    let questions = [], current = 0, sessionCorrect = 0, sessionTotal = 0;
+    let answered = false, selectedField = 'all', selectedSource = 'all', isWeakMode = false;
 
     const startPanel = document.getElementById('startPanel');
-    const quizPanel = document.getElementById('quizPanel');
-    const donePanel = document.getElementById('donePanel');
+    const quizPanel  = document.getElementById('quizPanel');
+    const donePanel  = document.getElementById('donePanel');
     const progressText = document.getElementById('progressText');
-    const progressBar = document.getElementById('progressBar');
-    const fieldBadge = document.getElementById('fieldBadge');
-    const sourceTag = document.getElementById('sourceTag');
+    const progressBar  = document.getElementById('progressBar');
+    const fieldBadge   = document.getElementById('fieldBadge');
     const questionText = document.getElementById('questionText');
-    const choicesEl = document.getElementById('choices');
-    const explanation = document.getElementById('explanation');
-    const nextBtn = document.getElementById('nextBtn');
-    const totalCount = document.getElementById('totalCount');
+    const choicesEl    = document.getElementById('choices');
+    const explanation  = document.getElementById('explanation');
+    const weakFeedback = document.getElementById('weakFeedback');
+    const nextBtn      = document.getElementById('nextBtn');
+    const totalCount   = document.getElementById('totalCount');
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedField = btn.dataset.field;
-        updateCount();
+        btn.classList.add('active'); selectedField = btn.dataset.field; updateCount();
       });
     });
-
     document.querySelectorAll('.source-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.source-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedSource = btn.dataset.source;
-        updateCount();
+        btn.classList.add('active'); selectedSource = btn.dataset.source; updateCount();
       });
     });
 
-    function updateCount() {
-      const q = buildQuestions(selectedField, selectedSource);
-      totalCount.textContent = `全 ${q.length} 問`;
-    }
+    function updateCount() { totalCount.textContent = `全 ${buildQuestions(selectedField, selectedSource).length} 問`; }
     updateCount();
 
     document.getElementById('startBtn').addEventListener('click', () => {
       questions = buildQuestions(selectedField, selectedSource);
-      if (questions.length === 0) {
-        alert('該当する問題がありません。条件を変更してください。');
-        return;
-      }
-      current = 0;
-      correct = 0;
-      startPanel.style.display = 'none';
-      quizPanel.style.display = 'block';
-      showQuestion();
+      if (!questions.length) { alert('該当する問題がありません。'); return; }
+      isWeakMode = false; startQuiz();
+    });
+    document.getElementById('weakBanner').addEventListener('click', () => {
+      questions = buildWeakQuestions();
+      if (!questions.length) { alert('苦手問題がありません。'); return; }
+      isWeakMode = true; startQuiz();
+    });
+    document.getElementById('weakRetryBtn').addEventListener('click', () => {
+      questions = buildWeakQuestions();
+      if (!questions.length) { alert('苦手問題が全部クリアされました！'); donePanel.style.display='none'; startPanel.style.display='block'; renderStats(); return; }
+      isWeakMode = true; donePanel.style.display = 'none'; startQuiz();
     });
 
+    function startQuiz() {
+      current = 0; sessionCorrect = 0; sessionTotal = 0;
+      quizPanel.classList.toggle('weak-mode', isWeakMode);
+      startPanel.style.display = 'none'; donePanel.style.display = 'none'; quizPanel.style.display = 'block';
+      showQuestion();
+    }
+
     function showQuestion() {
-      answered = false;
-      const q = questions[current];
-      const pct = Math.round((current / questions.length) * 100);
+      answered = false; const q = questions[current];
       progressText.textContent = `${current + 1} / ${questions.length}`;
-      progressBar.style.width = pct + '%';
-
-      fieldBadge.textContent = FIELD_LABEL[q.field];
-      fieldBadge.className = 'field-badge ' + FIELD_BADGE_CLASS[q.field];
-      sourceTag.textContent = q.source;
+      progressBar.style.width  = Math.round((current / questions.length) * 100) + '%';
+      fieldBadge.textContent   = FIELD_LABEL[q.field];
+      fieldBadge.className     = 'field-badge ' + FIELD_BADGE_CLASS[q.field];
+      document.getElementById('sourceTag').textContent = q.source || '';
       questionText.textContent = q.q;
-
       choicesEl.innerHTML = '';
       q.c.forEach((choice, i) => {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
         btn.textContent = `${['ア','イ','ウ','エ'][i]}. ${choice}`;
-        btn.addEventListener('click', () => onAnswer(i, q.a, q.e));
+        btn.addEventListener('click', () => onAnswer(i, q.a, q.e, q));
         choicesEl.appendChild(btn);
       });
-
-      explanation.className = 'explanation';
-      explanation.textContent = '';
+      explanation.className = 'explanation'; explanation.textContent = '';
+      weakFeedback.className = 'weak-feedback'; weakFeedback.textContent = '';
       nextBtn.className = 'next-btn';
     }
 
-    function onAnswer(selected, correct_idx, exp) {
-      if (answered) return;
-      answered = true;
-      const btns = choicesEl.querySelectorAll('.choice-btn');
-      btns.forEach(b => b.disabled = true);
-
+    function onAnswer(selected, correct_idx, exp, q) {
+      if (answered) return; answered = true; sessionTotal++;
+      const btns = choicesEl.querySelectorAll('.choice-btn'); btns.forEach(b => b.disabled = true);
+      const id = qId(q); const weak = loadWeak();
       if (selected === correct_idx) {
-        btns[selected].classList.add('correct');
-        correct++;
+        btns[selected].classList.add('correct'); sessionCorrect++;
+        if (weak.has(id)) { weak.delete(id); saveWeak(weak); weakFeedback.textContent = '✅ 苦手リストから削除しました'; weakFeedback.className = 'weak-feedback show'; }
       } else {
-        btns[selected].classList.add('wrong');
-        btns[correct_idx].classList.add('show-correct');
+        btns[selected].classList.add('wrong'); btns[correct_idx].classList.add('show-correct');
+        if (!weak.has(id)) { weak.add(id); saveWeak(weak); weakFeedback.textContent = '📌 苦手リストに追加しました'; weakFeedback.className = 'weak-feedback show'; }
       }
-
-      explanation.textContent = '💡 ' + exp;
-      explanation.className = 'explanation show';
-      nextBtn.className = 'next-btn show';
+      explanation.textContent = '💡 ' + exp; explanation.className = 'explanation show'; nextBtn.className = 'next-btn show';
     }
 
-    nextBtn.addEventListener('click', () => {
-      current++;
-      if (current >= questions.length) {
-        showDone();
-      } else {
-        showQuestion();
-      }
-    });
+    nextBtn.addEventListener('click', () => { current++; if (current >= questions.length) { showDone(); } else { showQuestion(); } });
 
     function showDone() {
-      quizPanel.style.display = 'none';
-      donePanel.style.display = 'block';
-      const pct = Math.round((correct / questions.length) * 100);
-      document.getElementById('scoreBig').textContent = `${correct} / ${questions.length}`;
+      quizPanel.style.display = 'none'; donePanel.style.display = 'block';
+      const pct = Math.round((sessionCorrect / sessionTotal) * 100);
+      document.getElementById('scoreBig').textContent   = `${sessionCorrect} / ${sessionTotal}`;
       document.getElementById('scoreLabel').textContent = `正解率 ${pct}%`;
+      const stats = loadStats(); stats.total += sessionTotal; stats.correct += sessionCorrect; saveStats(stats);
+      const cumRate = stats.total > 0 ? Math.round(stats.correct / stats.total * 100) : 0;
+      document.getElementById('doneStatsSummary').innerHTML = `累積: <span>${stats.total.toLocaleString()}問</span> 解答 ／ 累積正答率 <span>${cumRate}%</span>`;
+      const weak = loadWeak(); const wSummary = document.getElementById('doneWeakSummary');
+      if (weak.size > 0) {
+        wSummary.style.display = 'block';
+        wSummary.innerHTML = `📌 苦手問題: <span>${weak.size}問</span>　次回は「苦手特訓」で集中的に復習しましょう`;
+        document.getElementById('weakRetryBtn').classList.add('show');
+      } else { wSummary.style.display = 'none'; document.getElementById('weakRetryBtn').classList.remove('show'); }
     }
 
-    document.getElementById('retryBtn').addEventListener('click', () => {
-      donePanel.style.display = 'none';
-      startPanel.style.display = 'block';
-      updateCount();
+    document.getElementById('retryBtn').addEventListener('click', () => { donePanel.style.display='none'; startPanel.style.display='block'; renderStats(); updateCount(); });
+    document.getElementById('statsResetBtn').addEventListener('click', () => {
+      if (!confirm('学習記録（総解答数・正答率・苦手リスト）をすべてリセットしますか？')) return;
+      localStorage.removeItem(LS_STATS); localStorage.removeItem(LS_WEAK); renderStats();
     });
+
+    renderStats();
   </script>
 </body>
 </html>
